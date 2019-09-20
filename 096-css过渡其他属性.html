@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>096css过渡其他属性.html</title>
+	<style>
+		*{
+			width: 0;
+			height: 0;
+	}
+	.box{
+		width: 100px;
+		height: 100px;
+		background: red;
+		/*transition-property: width;*/
+		transition-property: height,width;
+		transition-delay:1s;
+		transition-duration: 500ms,3s;
+	}
+	.box:hover{
+		width: 400px;
+		height: 400px;
+	}
+	</style>
+	
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

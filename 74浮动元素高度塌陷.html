@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>74浮动元素高度塌陷.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+
+		}
+		.father1{
+			background-color: red;
+		}
+		p{
+			width: 100px;
+			height: 40px;
+		}
+		.father1 p{
+			background-color: green;
+		}
+		.father1 p:first-child{
+			float: left;
+			
+		} 
+		.father1 p:nth-child(2){	
+			float: left;
+		}
+		.father1 p:nth-child(3){
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div class="father1">
+			<p class="p11">p1</p>
+			<p class="p22">p22</p>
+			<p class="p33">p33</p>	
+		</div>
+	</div>
+</body>
+</html>

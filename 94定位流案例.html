@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>95定位流案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+
+		}
+		.container{
+			width: 960px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		header{
+			position: fixed;
+			top: 20px;
+			left: 50%;
+			margin-left: -480px;
+			width: 960px;
+			height: 50px;
+			line-height: 50px;
+			background: gray;
+
+		}
+		ul li{
+			float: left;
+			width: 20%;
+			text-align: center;
+			font-size: 18px;
+			cursor: pointer;
+		}
+		ul li:nth-child(3){
+			position: relative;
+			background: red;
+
+		}
+		ul li:nth-child(3) img{
+			position: absolute;
+			top: -19px;
+			left: 50%;
+			margin-left: -20px;
+
+		}
+		.coursel{
+			height: 440px;
+			margin-top: 80px;
+			background: green;
+
+		}
+		.content{
+			width: 1200px;
+			background: blue;
+		}
+		
+	</style>
+</head>
+<body>
+	<header>
+		<ul>
+			<li>天猫会员</li>
+			<li>品牌街</li>
+			<li>
+				电器城
+				<img src="图片" alt="">
+			</li>
+			<li>营业厅</li>
+			<li>魅力惠</li>
+		</ul>
+	</header>
+	
+	<section class="coursel container"></section>
+	<section class="content container">我是内容</section>
+</body>
+</html>

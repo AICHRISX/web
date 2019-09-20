@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>046-盒模型-宽高不变.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.qwe{
+			border: 1px solid #000;
+			width: 300px;
+			height: 100px;
+		}
+		.qwe div{
+			width: 100px;
+			height: 100px;
+			display: inline-block;
+		}
+		.asd{
+			background-color: #800;
+		}
+		div.zxc{
+			background-color: #300;
+			border: 10px solid #000;
+			padding: 10px;
+			box-sizing: border-box;
+			/*width: 90px;*/
+			/*height: 90px;*/
+		}
+		.dcx{
+			background-color: #966;
+		}
+	</style>
+</head>
+<body>
+	<div class="qwe">
+		<div class="asd"></div>
+		<div class="zxc"></div>
+		<div class="dcx"></div>
+	</div>
+</body>
+</html>
