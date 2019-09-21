@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>068-css显示模式的转换.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			border:1px solid #000;
+			width: 200px;
+			height: 250px;
+			margin: 20px;
+			padding: 50px;
+		}
+		.father{
+			border: 1px solid #000;
+		}
+		.father .box{
+			border-color: red;
+			/*display: inline;*/
+			display: inline-block;
+		}
+		div.box{
+			/*display: inline-block;*/
+		}
+	</style>
+</head>
+<body>
+	<div class="box">box1</div>	
+	<div class="box">box2</div>	
+	<div class="father">
+	<div class="box">span1</div>
+	<div class="box">span2</div>
+	</div>
+	<img src="../photo/fennu.jpg" alt="">
+	<img src="../photo/fennu.jpg" alt="">
+</body>
+</html>
