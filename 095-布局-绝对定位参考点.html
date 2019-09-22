@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>095-布局-绝对定位参考点.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 600px;
+			height: 600px;
+			border: 10px solid #000;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: gray;
+			position: absolute;
+			left: 50px;
+			top: 50px;
+		}
+		.father1{
+			width: 400px;
+			height: 400px;
+			border: 10px solid #000;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: skyblue;
+			/*position: relative;*/
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="father1">
+			<div class="son"></div>
+		</div>
+	</div>
+</body>
+</html>
