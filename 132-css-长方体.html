@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>131-css-全正面正方体.html</title>
+	<title>132-css-长方体.html</title>
 	<style>
 		*{
 			margin: 0;
@@ -14,7 +14,7 @@
 			height: 200px;
 			margin: 100px auto;
 			position: relative;
-			transform: rotateX(9deg) rotateY(-22deg);
+			transform: rotateX(-13deg) rotateY(37deg);
 			transform-style: preserve-3d;
 		}
 		li{
@@ -28,27 +28,27 @@
 		}
 		li:nth-child(1){
 			background-color: blue;
-			transform: rotateX(90deg) translateZ(100px);
+			transform: rotateX(90deg) translateZ(100px) scale(1.5,1);
 		}
 		li:nth-child(2){
 			background-color: red;	
-			transform: rotateX(180deg) translateZ(100px);	
+			transform: rotateX(180deg) translateZ(100px) scale(1.5,1);	
 		}
 		li:nth-child(3){
 			background-color: purple;	
-			transform: rotateX(270deg) translateZ(100px);
+			transform: rotateX(270deg) translateZ(100px) scale(1.5,1);
 		}
 		li:nth-child(4){
 			background-color: skyblue;	
-			transform: rotateX(360deg) translateZ(100px);
+			transform: rotateX(360deg) translateZ(100px) scale(1.5,1);
 		}
 		li:nth-child(5){
 			background-color: green;	
-			transform: rotateY(-90deg) translateZ(100px);
+			transform: rotateY(90deg) translateZ(150px);
 		}
 		li:nth-child(6){
 			background-color: yellow;
-			transform: rotateY(90deg) translateZ(100px);
+			transform: rotateY(90deg) translateZ(-150px);
 		}
 	</style>
 </head>
