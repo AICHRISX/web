@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文字两端对齐.html</title>
+	<style>
+		div{
+			margin: 10px 0;
+			width: 100px;
+			border: 1px solid gold;
+			text-align: justify;
+			text-align-last: justify;
+		}
+		div:after{
+			content: '';
+			display: inline-block;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div>姓名</div>
+	<div>年龄</div>
+	<div>性别</div>
+</body>
+</html>

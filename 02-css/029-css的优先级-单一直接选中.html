@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>029-css的优先级-单一直接选中.html</title>
+	<style>
+		/*直接选中情况下：1.谁的id多听谁的*/
+		/*2.ID一样多的情况下：谁的类多听谁的*/
+		/*3.ID和类一样多：谁的标签多听谁的*/
+		/*4.所有选择器一样多：谁在后面听谁的*/
+	/*	#ull #li1 #p1{
+			color: red;
+		}
+		#li1 #p1{
+			color:blue; 
+		}
+		#ul1 ,li1 .p1{
+			color: red;
+		}
+		#ul1 p.p1{
+			color: blue;
+		}
+		#ul1 p.p1{
+			color: red;
+		}
+		#ul1 .p1{
+			color: blue;
+		}*/
+		p{
+			color: red;
+		}
+		div{
+			color: blue;
+		}
+		*{
+			color: skyblue;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1">直接选中情况下：1.谁的id多听谁的
+		2.ID一样多的情况下：谁的类多听谁的
+		3.ID和类一样多：谁的标签多听谁的
+		4.所有选择器一样多：谁在后面听谁的</div>
+	<p class="p1">直接选中情况下：1.谁的id多听谁的
+		2.ID一样多的情况下：谁的类多听谁的
+		3.ID和类一样多：谁的标签多听谁的
+		4.所有选择器一样多：谁在后面听谁的</p>
+</body>
+</html>

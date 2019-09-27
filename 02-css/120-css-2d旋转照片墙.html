@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>120-css-2d旋转照片墙.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			height: 400px;
+			background-color: skyblue;
+			margin-top: 50px;
+			text-align: center;
+		}
+		ul li{
+			width: 200px;
+			height: 250px;
+			display: inline-block;
+			margin-top: 75px;
+			margin-right: 20px;
+			position: relative;
+			transition: all 1s;
+		}
+		ul li img{
+			width: 100%;
+			height: 100%;
+			border: 5px solid #fff;
+			box-sizing: border-box;
+		}
+		ul li:nth-child(1){
+			transform: rotate(10deg);
+		}
+		ul li:nth-child(2){
+			transform: rotate(-15deg);
+		}
+		ul li:nth-child(3){
+			transform: rotate(30deg);
+		}
+		ul li:nth-child(4){
+			transform: rotate(45deg);
+		}
+		ul.box li:hover{
+			transform: rotate(0deg) scale(1.2);
+			z-index: 1;
+			opacity: 1;
+		}
+		ul:hover li{
+			opacity: 0.5;
+		}
+	</style>
+</head>
+<body>
+	<ul class="box">
+		<li><img src="../photo/fj1.jpeg" alt=""></li>
+		<li><img src="../photo/big1.jpg" alt=""></li>
+		<li><img src="../photo/8.26-02.jpeg" alt=""></li>
+		<li><img src="../photo/big2.jpg" alt=""></li>
+	</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
