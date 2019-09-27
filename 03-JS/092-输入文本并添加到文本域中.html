@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>092-输入文本并添加到文本域中.html</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" id="btn" value="点击">
+	<textarea name="" id="content" cols="30" rows="10"></textarea>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oContent = document.getElementById('content');
+
+
+	oBtn.onclick = function(){
+		// var sVal = oTxt.value;
+		// var sVal = oTxt.["value"];
+		// var sVal = oTxt.getAttribute("value");
+		// console.log(sVal);
+		// oContent.value = sVal;
+		// oContent.setAttribute("value",sval);
+		// oTxt.removeAttribute("showName");
+		// var val = oTxt.getAttribute('value');
+		// oTxt =["test"] = 'bb'; 
+		// oTxt.setAttribute('test','bb');
+		// oTxt.removeAttribute('value');
+		oTxt.removeAttribute('test');
+	}
+</script>
+</html>

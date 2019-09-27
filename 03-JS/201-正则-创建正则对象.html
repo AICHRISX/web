@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>201-正则-创建正则对象.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = "iop jkl bnm";
+	var reg = new RegExp("a","g");
+	var reg1 = /a/g;
+
+	console.log(typeof reg1);
+
+	console.log(str);
+	console.log(str.replace(reg,"*"));
+
+
+	console.log(str);
+	console.log(str.replace(reg1,"*"));
+</script>
+</html>

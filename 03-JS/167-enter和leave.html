@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>167-enter和leave.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#one{
+			width: 400px;
+			height: 400px;
+			margin: 50px auto;
+			background-color:skyblue;
+			overflow: hidden;
+		}
+		#two{
+			width: 100px;
+			height: 100px;
+			margin: 150px auto;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="one">
+		<div id="two"></div>
+	</div>
+</body>
+<script>
+	var oOne = document.getElementById('one');
+	var oTwo = document.getElementById('two');
+
+	// oOne.onmouseover = function(){
+	// 	console.log("one mouseover");
+	// }
+	// oOne.onmouseout = function(){
+	// 	console.log("one mouseout");
+	// }
+	// 
+	oOne.onmouseenter = function(){
+		console.log("one onmouseenter");
+	}
+	oOne.onmouseleave = function(){
+		console.log("one onmouseleave");
+	}
+</script>
+</html>

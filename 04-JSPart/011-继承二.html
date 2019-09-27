@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011-继承二.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var xxxx=function(id,name,age){
+		var num = 1;
+		function checkId(){};
+		this.getName = function(){};
+		this.getAge = function(){};
+		this.getId = function(){};
+		this.id = id;
+		this.copy = function(){
+
+			this.setname =(name);
+			this.setprice(price);
+		}
+	}
+	var b = xxxx(11,50);
+</script>
+</html>
+function 子类(属性1,属性2,属性3){
+    父类.call(this,属性1,属性2);//属性的继承
+    this.属性3 = 属性3; //子类的属性
+}
+//方法的继承
+for(i in 父类.prototype){
+    子类.prototype[i] = 父类.prototype[i];
+}
+子类.prototype.方法 = function(){} //子类的方法

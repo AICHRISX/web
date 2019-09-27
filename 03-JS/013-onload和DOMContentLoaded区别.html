@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+	</style>
+	<script>
+		console.log("in.........");
+		window.onload=function(){
+			console.log("onload......")
+		}
+		document.addEventlistener("DOMcontentloaded",function(){
+			console.log("DOMcontententloaded.......")
+		})
+	</script>
+</head>
+<body>
+	<div></div>
+	<img src="images/01.jpg" alt="">
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>017-严格模式.html</title>
+	<script>
+		// "use strict"
+		function sayHi(){
+			alert(!this);
+		}
+			"use strict"
+
+		function sayHello(){
+			// "use strict"
+			alert(!this)
+		}
+		sayHi();
+		sayHello();
+	</script>
+</head>
+<body>
+	
+</body>
+
+</html>

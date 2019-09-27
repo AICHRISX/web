@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>211-匹配模式.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = "23456";
+	// var reg = /\d{3,5}/;
+	var reg1 = /\d{3,5}?/;
+
+	console.log(str);
+	// console.log(str.replace(reg,"*"));//*23456
+	console.log(str.replace(reg1,"*"));//56
+</script>
+</html>

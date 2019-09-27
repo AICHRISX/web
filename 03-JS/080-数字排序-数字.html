@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>080-数字排序-数字.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [8,65,13,24,98,75,42];
+
+	var tmp =0;
+	console.log(":::1",arr);
+	for(var i =0;i<arr.length;i++){
+		for(var j =i+1;j<arr.length;j++){
+			if(arr[i] > arr[j]){
+				tmp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = tmp; 
+				console.log(arr);
+			}
+		}
+	}
+	// console.log(":::2",arr);
+</script>
+</html>

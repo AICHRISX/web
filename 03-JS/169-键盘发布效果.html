@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>169-键盘发布效果.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrap{
+			width: 500px;
+			margin: 100px auto;
+		}
+		li{
+			width: 100% ;
+			height: 40px;
+			line-height: 40px;
+			border-bottom: 1px dotted #ccc;
+			color: #f69;
+			list-style: none;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<input type="text" id="txt">
+		<input type="button" value="提交" id="btn">
+		<ul id="list">
+			<li>xx</li>
+		</ul>
+	</div>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oList = document.getElementById('list');
+	oTxt.onkeydown = function(ev){
+		if(ev.keyCode == 13 && ev.ctrlKey){
+			oBtn.onclick();
+		}
+	}
+	oBtn.onclick = function(){
+		var oLi = document.createElement('li');
+		oLi.innerHTML = oTxt.value;
+		oTxt.value = '';
+		oList.insertBefore(oLi,oList.firstChild);
+	}
+</script>
+</html>

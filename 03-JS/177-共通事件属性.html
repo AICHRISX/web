@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>177-共通事件属性.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#one{
+			width: 400px;
+			height: 400px;
+			background-color: skyblue;
+			margin: 150px auto;
+		}
+		#two{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="one">
+		<div id="two"></div>
+	</div>
+</body>
+<script>
+	var oOne = document.getElementById('one');
+
+	oOne = addEventListener('click',function(ev){
+		console.log(ev.currentTarget);
+		console.log(ev.target);
+	},false)
+</script>
+</html>

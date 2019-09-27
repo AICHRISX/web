@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>222-字符串其他处理方法.html</title>
+</head>
+<body>
+	<input type="text">
+</body>
+<script>
+	var str = "x1x1x1x1";
+	console.log(str);
+	console.log(str.replace(/\d/g,function(match,index,origin){
+		return "$";
+	}));
+	console.log(str.charAt(1));
+	console.log(str.charCodeAt(0));
+	console.log(str.indexOf("g"));
+	console.log(str.lastIndexOf("a"));
+	console.log(encodeURIComponent("https://www.kuazhu.com/"));
+	console.log(decodeURIComponent("https%3a%2f%2fwww.kuazhu.com%2f"));
+	console.log(str.concat("12345678"));
+	console.log(str.slice(1,4));
+	console.log(str.substr(-4,4));
+	console.log(str.substring(2,5));
+	console.log(str.toLowerCase());
+	console.log(str.toUpperCase());
+	console.log(str.trim());
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>190-Object创建对象.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var person1 = new Object();
+
+	person1.name = "chris";
+	person1.age = 22;
+	person1.sayName = function(){
+		console.log("I chris"+this.name);
+	}
+
+	var person2 = new Object();
+	person2.name = "jack";
+	person2.age = 22;
+	person2.sayName = function(){
+		console.log("I jack"+this.name);
+	}
+	console.log(person1);
+	console.log(person2);
+
+	console.log(person1.sayName ==person2.sayName);
+</script>
+</html>

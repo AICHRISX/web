@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>152-事件-事件处理程序.html</title>
+</head>
+<body>
+	<button id="btn">点击</button>
+	<button id="btn1">移除事件</button>
+</body>
+<script>
+	function show(){
+		alert('hihi');
+	}
+	function sayHi(){
+		alert('hihi');
+	}
+	var oBtn = document.getElementById('btn');
+	var oBtn1 = document.getElementById('btn1');
+
+	oBtn.addEventListener('click',sayHi,false);
+	oBtn.addEventListener('click',show,false);
+	oBtn.addEventListener('click',function(){
+		alert('hehe');
+	},false);
+
+	oBtn1.addEventListener('click',function(){
+		oBtn.removeEventListener('click',sayHi,false);
+		oBtn.removeEventListener('click',show,false);
+		oBtn.removeEventListener('click',function(){
+			alert('hehe');
+		},false);
+	},false)
+</script>
+</html>

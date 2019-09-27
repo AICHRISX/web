@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>148-函数作为参数.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function show(fn){
+		// alert(name);
+		fn();
+	}
+	show(function(){
+		alert('xx');
+	});
+
+	
+	function sum(x,y,fn){
+		var result = x*10 + y*10;
+		fn(result);
+	}
+	sum(2,3,function(){
+		alert(result);
+	})
+</script>
+</html>

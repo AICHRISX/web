@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>172-表单提交和提示.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrap{
+			width: 600px;
+			margin: 50px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<form action="http://www.kuazhu.com" id="sheet" target="_blank">
+			<input type="text" id="txt">
+			<input type="submit" id="sub">
+			<input type="reset" id="res">
+			<p id="msg">xx</p>
+		</form>
+	</div>
+</body>
+<script>
+	var oForm = document.getElementById('sheet');
+	var oTxt = document.getElementById('txt');
+	var oSub = document.getElementById('sub');
+	var oRes = document.getElementById('res');
+	var oMsg = document.getElementById('msg');
+                              
+	oTxt.onfocus = function(){
+		console.log(11);
+		oMsg.innerHTML = "请输入有效字符";
+		oMsg.style.color = "blue";
+	}
+	oTxt.onblur = function(){
+		var len = oTxt.value.length;
+		// console.log(len);
+		if(len<4 || len >6){
+			oMsg.innerHTML = "输入信息不合法，请再次输入";
+			oMsg.style.color = "skyblue";
+		}else{
+			oMsg.innerHTML = "合法信息";
+			oMsg.style.color = "pink";
+		}
+	}
+	oSub.onclick = function(){
+		console.log(789);
+	}
+	oForm.onsubmit = function(){
+		console.log(456);
+	}
+	oForm.onreset = function(){
+		console.log(123);
+	}
+	oRes.onclick = function(){
+		console.log("000");
+	}
+</script>
+</html>

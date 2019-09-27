@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>204-括号中任意一个原子.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// var str = "qwertyuiop";
+	// var reg = /a|s|d|f|/g;
+	// console.log(str.replace(reg,))
+	var str = "你好";
+	var reg = /[\ue00-\u423sa]/g;
+	console.log(str);
+	console.log(str.replace(reg,"*"));
+	console.log(str.length);
+
+	function getLen(str){
+		return str.sreplace(/[\ue00\u423sag]/g,"aa").length;
+	}
+	// console.log(getLen(str));
+</script>
+</html>

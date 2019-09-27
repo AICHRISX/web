@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>145-动画-减速动画封装函数.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 500px;
+			margin: 50px auto;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background: skyblue;
+			margin-top: 20px;
+		}
+		.box:last-child{
+			opacity: 0.2;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box" id="box1"></div>
+		<div class="box" id="box2"></div>
+		<div class="box" id="box3"></div>
+	</div>
+</body>
+<script>
+	function animation(obj,attr,itarget){
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			var currentval = parseFloat(getComputedStyle(obj,false)[attr]);
+			if(attr == "opacity"){
+				currentval = Math.round(currentval*100);
+			}
+			iSpeed = (itarget - currentval)/10;
+			iSpeed = iSpeed>0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+
+
+			if(!iSpeed){
+
+				clearInterval(obj.timer);	
+			}else{
+				if(attr =="opacity"){
+					obj.style[attr] = (currentval + iSpeed)/100;
+				}else{
+					obj.style[attr] = currentval + iSpeed + "px"; 
+				}		
+			}	
+	},30)
+}
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var oBox3 = document.getElementById('box3');
+	// var timer = null;
+	oBox1.onmouseover = function(){
+		animation(oBox1,"width",400);
+
+	}
+	oBox2.onmouseover = function(){
+		animation(oBox2,"height",400);
+		
+	}
+	oBox3.onmouseover = function(){
+		animation(oBox3,"opacity",400);
+	}
+</script>
+</html>

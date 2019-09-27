@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>104-打开新窗口.html</title>
+</head>
+<body>
+	<button id="btn">打开新页面</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		var newWin = window.open("https://www.baidu.com","_self");
+		console.log(newWin);
+		// window.open("https://www.kuazhu.com","_self");
+		window.open("https://www.kuazhu.com");
+	}
+</script>
+</html>

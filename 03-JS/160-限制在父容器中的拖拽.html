@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>160-限制在父容器中的拖拽.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#sss{
+			position: relative;
+			width: 600px;
+			height: 600px;
+			background-color: blue;	
+			margin: 50px auto;
+			border: 1px solid #000;
+
+		}
+		#jjj{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 150px;
+			height: 150px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div id="sss">
+		<div id="jjj"></div>
+	</div>
+</body>
+<script>
+	var oSss = document.getElementById('sss');
+	var oJjj = document.getElementById('jjj');
+	oJjj.onmousedown = function(ev){
+		var disX = ev.clientX - oJjj.offsetLeft;
+		var disY = ev.clientY - oJjj.offsetTop;
+		var l = 0;
+		var t = 0;
+		document.onmousemove = function(ev){
+			l = ev.clientX - disX;
+			t = ev.clientY - disY;
+			if(l < 0){
+				l = 0;
+			}else if(l > oSss.offsetWidth - oJjj.offsetWidth){
+				l = oSss.offsetWidth - oJjj.offsetWidth;
+			}
+			if(t < 0){
+				t = 0;
+			}else if(t > oSss.offsetHeight - oJjj.offsetHeight){
+				t = oSss.offsetHeight - oJjj.offsetHeight;
+			}
+			oJjj.style.left = l + "px";
+			oJjj.style.top = t + "px";
+			// oJjj.style.right = r + "px";
+			// oJjj.style.bottom = b + "px";
+		}
+		document.onmouseup = function(){
+			document.onmouseup = null;
+			document.onmousemove = null;
+		}
+	}
+</script>
+</html>

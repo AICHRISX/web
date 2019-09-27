@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>024-在函数中直接找到元素的索引.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	var li=document.getElementsByTagName("li");
+
+   for(var i=0;i<li.length;i++){
+
+　　　　li[i].index = i; //给每个li定义一个属性索引值，赋
+
+　　　  li[i].onclick = function(){
+
+　　　　　　alert("下标索引值为："+this.index);    //    索引值从0开始
+
+　　　　}
+
+   }
+ */
+ //在数组中查找所有出现的x，并返回一个包含匹配索引的数组
+function findall(a,x){
+ var results=[],
+   len=a.length,
+   pos=0;
+ while(pos<len){
+  pos=a.indexOf(x,pos);
+  if(pos===-1){//未找到就退出循环完成搜索
+   break;
+  }
+  results.push(pos);//找到就存储索引
+  pos+=1;//并从下个位置开始搜索
+ }
+ return results;
+}
+ 
+var arr=[1,2,3,1,4,1,4,1];
+findall(arr,1);//返回[0,3,5,7]
+</script>
+</html>

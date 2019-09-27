@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>091-获取兄弟元素.html</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li id="li3">3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>					
+</body>
+<script>
+	var oLi3 = document.getElementById("li3");
+	var oUl = document.getElementById('ul1');
+	// var oLi = document.getElementById('li3');
+	// var aLi = document.getElementsByTagName('li');
+	// var oNextNode = oLi.nextSibling;
+	// var oNextElementNode = oLi.nextElementSibling;
+	// var oPreviousNode = oLi.PreviousSibling
+	// var oPreviousElementNode = oLi.PreviousElementSibling;
+	// console.log(aLi);
+	// console.log(aNodes);
+	// console.log("oNextNode::",oNextNode);
+	// console.log("oPreviousNode::",oPreviousNode);
+	// console.log("oNextElementNode::",oNextElementNode);
+	// console.log("oPreviousElementNode::",oPreviousElementNode);
+	// console.log(oNextNode === oNodes[6]);
+	// console.log(oPreviousNode === aNodes[4]);
+	console.log(oLi3.nextElementSibling == oUl.childNodes[7]);
+	console.log(oLi3.PreviousElementSibling == oUl.childNodes[3]);
+</script>
+</html>

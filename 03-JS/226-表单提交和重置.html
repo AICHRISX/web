@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<form action="https://www.baidu.com" target="_blank">
+		<div>
+			<input type="text" name="username">
+		</div>
+		<div>
+			<input type="submit">
+			<input type="images" src="images/xiaomi01.js" value="提交">
+			<button type="submit">btn submit</button>
+			<button id="btn">提交</button>
+		</div>
+		<div>
+			<input type="reset">
+			<button type="reset">btn reset</button>
+		</div>
+	</form>
+	<button id="btn">提交</button>
+	<button>重置</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oForm = document.forms[0];
+	oForm.onsubmit = function(){
+		return false;
+		console.log("on.onsubmit...");
+	}
+	// oBtn.onclick = function(){
+	// 	oForm.submit();
+	// }
+	oBtn.onreset = function(){
+		oForm.submit();
+	}
+	oForm.onreset = function(){
+		console.log('on reset...');
+	}
+</script>
+</html>

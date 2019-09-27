@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>196-原型模式.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	
+	function createPerson(name,age){
+
+		this.name = name;
+		this.age = age;
+		// this.sayName = sayName;
+		// this.sayAge = sayAge;
+		
+	}
+
+	createPerson.prototype.sayName =function(){
+		console.log(34);
+		console.log("I chris"+this.name);
+	}
+	createPerson.prototype.sayAge =function(){
+		console.log("I chris"+this.age+"years old");
+	}
+
+	createPerson.prototype.LEGS = 2;
+	
+
+	var person1 = new createPerson("jack",24);
+	person1.sayName();
+	person1.sayAge();
+	console.log(person1.LEGS);
+	console.log(person1);
+
+
+	var person2 = new createPerson("chris",22);
+	person2.sayName();
+	person2.sayAge();
+	console.log(person2.LEGS);
+	console.log(person2);
+
+
+	console.log(person1.sayName == person2.sayName);
+</script>
+</html>

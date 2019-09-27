@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>221-字符串上的方法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str1 = "May the Force Be With You";
+	var reg1 =/May/;
+	console.log(str1.search("a"));
+
+	var str2 = "xx2019-90-90bb2019-05-00cc";
+	var reg2 = /(?<years>\d{4})-(?<month>\d{2})-(?<day>\d{2})/;
+	console.log(str2.match(reg2));
+
+	var str3 = "xxx xxx xx x xxxx";
+	var reg3 =/\s/g;
+	console.log(str3.split(reg3));
+	//回文
+	var str4 = "xxsxx";
+	function isH(str){
+		return str === str.split("").reverse().join("");
+	}	
+	console.log(isH(str4));
+</script>
+</html>

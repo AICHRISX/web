@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>035-高级数组.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+      var arr = [1,2,3,4,5,6,7,8,9,];
+      var everyResalt = arr.every(function(item,index,array){
+      	return item>5;
+      });
+      console.log(everyResalt);
+      var someResalt = arr.some(function(item,index,array){
+      	return item>5;
+      });
+      console.log(someResalt);
+      var mapResalt = arr.map(function(item,index,array){
+      	return item*2;
+      });
+      console.log(mapResalt);
+      var filterResalt = arr.filter(function(item,index,array){
+      	return item>5;
+      });
+      console.log(filterResalt);
+      var a =0;
+      arr.forEach(function(item,index,array){
+      	a+=item;
+      });
+      console.log(a);
+      
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07-网页换肤案例.html</title>
+	<link id="test" rel="stylesheet" href="css/test1.css">
+	<script>
+		function toSkinOP(){
+			document.getElementById('test').href="css/test1.css"
+		}
+
+		function toSkinOL(){
+			document.getElementById('test').href="css/test2.css"
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="风景1" onclick="toSkinOP()">
+	<input type="button" value="风景2" onclick="toSkinOL()">
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>168-键盘移动物体.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<dib id="box"></dib>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	document.onkeydown = function(ev){
+		if(ev.keyCode == 37){
+			oBox.style.left = oBox.offsetLeft - 10 + 'px';
+		}else if(ev.keyCode == 39){
+			oBox.style.left = oBox.offsetLeft + 10 + 'px';
+		}
+	}
+
+		// /* 创建一个div */
+		// 	var div = document.createElement("div");
+		// 	/* 将div添加到网页中 */
+		// 	document.body.appendChild(div);
+		// 	/* 设置div的样式 */
+		// 	div.style.width = "100px";
+		// 	div.style.height = "100px";
+		// 	div.style.backgroundColor = "red";
+		// 	div.style.position = "absolute";
+		// 	div.style.top = "0";
+		// 	div.style.left = "0";
+		// 	/* 键盘按下事件 */
+		// 	document.onkeydown = function(e) {
+		// 		/* 方块移动的速度，即每按一次方块移动的像素，值越大移动速度越快 */
+		// 		var speed = 10;
+		// 		switch(e.which){
+		// 			// 上
+		// 			case 38:
+		// 			  div.style.top = parseInt(div.style.top) - speed + "px";
+		// 			  break;
+		// 			// 下
+		// 			case 40:
+		// 				div.style.top = parseInt(div.style.top) + speed + "px";
+		// 				break;
+		// 			// 左
+		// 			case 37:
+		// 				div.style.left = parseInt(div.style.left) - speed + "px";
+		// 				break;
+		// 			// 右
+		// 			case 39:
+		// 				div.style.left = parseInt(div.style.left) + speed + "px";
+		// 				break;
+		// 		}
+		// 	}
+
+</script>
+</html>

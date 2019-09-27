@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>166-放大镜.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			position:absolute;
+			top: 100px;
+			left: 100px;
+		}
+		#bigbox{
+			position:absolute;
+			top: 0;
+			left: 0;
+			width: 450px;
+			height: 450px;
+			border: 1px solid #ccc;
+		}
+		#bigbox img{
+			width: 100%;
+			height: 100%;
+		}
+		#mask{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 200px;
+			height: 200px;
+			background-color: rgba(255,255,0,0.5);
+			display: none;
+			cursor: move;
+		}
+		#list{
+			position: absolute;
+			top: 450px;
+			left: 0;
+			width: 450px;
+		}
+		#list li{
+			float: left;
+			width: 54px;
+			height: 54px;
+			margin-right: 10px;
+			list-style: none;
+			opacity: 0.5;
+			cursor: pointer;
+		}
+		#list li.active{
+			opacity: 1;
+		}
+		#largebox{
+			position: absolute;
+			left: 452px;
+			width: 600px;
+			height: 600px;
+			border: 1px solid #ccc;
+			overflow: hidden;
+			display: none;
+		}
+		#largebox img{
+			width: 800px;
+			height: 800px;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="bigbox">
+			<img src="/Users/changzhifeng/liyu/big1.jpg" alt="">
+			<span id="mask"></span>
+		</div>
+		<ul id="list">
+			<li class="active">
+				<img src="/Users/changzhifeng/liyu/x1.jpg" alt=""></li>
+			<li><img src="/Users/changzhifeng/liyu/x2.jpg" alt=""></li>
+			<li><img src="/Users/changzhifeng/liyu/x3.jpg" alt=""></li>
+		</ul>
+		<div id="largebox">
+			<img src="/Users/changzhifeng/liyu/x4.png" alt="">
+		</div>
+	</div>
+</body>
+<script>
+	var aSmallImg = document.querySelectorAll('#list li'); 
+	var oBigImg = document.querySelector('#bigbox img');
+	var oBigbox = document.getElementById('bigbox');
+	var oWrap = document.getElementById('wrap');
+	var oMask = document.getElementById('mask');
+	var oLargeBox = document.getElementById('largebox');
+	var oLargeImg = document.querySelector('#largebox img');
+
+	//1.给每一个li监听事件
+	for(var i = 0;i<aSmallImg.length;i++){
+		aSmallImg[i].index = i;
+		aSmallImg[i].onmouseover = function(){
+			for(var j = 0;j<aSmallImg.length;j++){
+				aSmallImg[j].className = "";
+			}
+			oBigImg.src = "/Users/changzhifeng/liyu/x4" + (this.index+1) + ".png"
+			oLargeImg.src = "/Users/changzhifeng/liyu/x3" +(this.index+1) + ".jpg";
+			this.className = "active";
+		}
+	}
+	oBigbox.onmouseover = function(){
+		oMask.style.display = 'block';
+		oLargeBox.style.display = 'block';
+		oBigbox.onmouseover = function(ev){
+			console.log(oBigbox.offsetLeft);
+			var l = ev.clientX - oWrap.offsetLeft - oMask.offsetWidth * 0.5;
+			var t = ev.clientY - oWrap.offsetTop - oMask.offsetHeight * 0.5;
+			if(l <0 ){
+				l = 0;
+			}else if(l >= oBigbox.offsetWidth - oMask.offsetWidth){
+				l = oBigbox.offsetWidth - oMask.offsetWidth
+			}
+			if(t <0 ){
+				t = 0;
+			}else if(t >= oBigbox.offsetHeight - oMask.offsetHeight){
+				t = oBigbox.offsetHeight - oMask.offsetHeight
+			}
+			oMask.style.left = l + 'px';
+			oMask.style.top = t + 'px';
+
+			var percentX = l / (oBigbox.offsetWidth - oMask.offsetWidth);
+			var percentY = t / (oBigbox.offsetHeight - oMask.offsetHeight);
+
+			oLargeImg.style.left = percentX * (oLargeBox.offsetWidth - oLargeImg.offsetWidth) + 'px';
+			oLargeImg.style.top = percentY * (oLargeBox.offsetHeight - oLargeImg.offsetHeight) + 'px';
+		}
+		oBigbox.onmouseout = function(){
+			oMask.style.display = 'none';
+			oLargeBox.style.display = 'none';
+		}
+	}
+
+</script>
+</html>

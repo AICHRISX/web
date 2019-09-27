@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>163-自定义滚动条基本使用.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#sss{
+			position: relative;
+			width: 500px;
+			height: 30px;
+			background-color: #ccc;	
+			margin: 100px auto;
+			border: 1px solid #000;
+
+		}
+		#jjj{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 30px;
+			height: 30px;
+			background-color: yellow;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background-color: #f05666;
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="sss">
+		<div id="jjj"></div>
+	</div>
+	<div id="box"></div>
+</body>
+<script>
+	var oSss = document.getElementById('sss');
+	var oBox = document.getElementById('box');
+	var oJjj = document.getElementById('jjj');
+	oJjj.onmousedown = function(ev){
+		var disX = ev.clientX - oJjj.offsetLeft;
+		var l = 0;
+		var t = 0;
+		document.onmousemove = function(ev){
+			l = ev.clientX - disX;
+			if(l < 0){
+				l = 0;
+			}else if(l > oSss.offsetWidth - oJjj.offsetWidth){
+				l = oSss.offsetWidth - oJjj.offsetWidth;
+			}
+			var scale = l / (oSss.offsetWidth - oJjj.offsetWidth);
+			// console.log(scale);
+			oBox.style.width = 100 + 500 * scale + 'px';
+			oBox.style.height = 100 + 500 * scale + 'px';
+			oBox.style.opacity = scale;
+			oJjj.style.left = l + "px";
+			// oJjj.style.right = r + "px";
+			// oJjj.style.bottom = b + "px";
+		}
+		document.onmouseup = function(){
+			document.onmouseup = null;
+			document.onmousemove = null;
+		}
+	}
+</script>
+</html>

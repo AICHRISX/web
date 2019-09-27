@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>118-数码时钟-图片.html</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		background-color: #000;
+	}
+	#timer{
+		margin: 100px auto;
+		line-height: 60px;
+		font-size: 40px;
+		color: #fff;
+		text-align: center;
+	}
+	img{
+		vertical-align: middle;
+	}
+</style>
+</head>
+<body>
+	<div id="timer">
+		<img src="" alt="">
+		<img src="" alt="">
+		:
+		<img src="" alt="">
+		<img src="" alt="">
+		:
+		<img src="" alt="">
+		<img src="" alt="">
+	</div>
+</body>
+<script>
+	function to2Str(num){
+		return num<10 ? "0" + num : "" +num;
+	}
+	var timer = document.getElementById('timer');
+	var aImg = timer.children;
+	// console.log(aImg);
+	
+	function showTime(){
+		var today = new Date();
+	var iHour = today.getHours();
+	var iMinute = today.getMinutes();
+	var iSecond = today.getSeconds();
+	var timeStr = to2Str(iHour) + to2Str(iMinute) + to2Str(iSecond);
+	for(var i =0;i<aImg.length;i++){
+		aImg[i].src = "图片名称及格式"+ timeStr.charAt(i) + ".png";
+	}
+	
+	}
+	setInterval(showTime,300);
+	showTime();
+</script>
+</html>

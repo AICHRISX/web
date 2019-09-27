@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>197-动态原型.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function createPerson(name,age){
+
+		this.name = name;
+		this.age = age;
+		// console.log(11);
+		if(!createPerson.prototype.sayName){
+			console.log(11);
+			createPerson.prototype.sayName = function(){
+				console.log("I chris"+this.name);	
+			}
+		}
+		if(!createPerson.prototype.sayAge){
+			console.log(11);
+			createPerson.prototype.sayAge =function(){
+				console.log("I chris"+this.age+"years old");
+			}
+		}
+	}
+
+	
+	var person1 = new createPerson("jack",24);
+	person1.sayName();
+	person1.sayAge();
+	// console.log(person1.LEGS);
+	console.log(person1);
+
+
+	var person2 = new createPerson("chris",22);
+	person2.sayName();
+	person2.sayAge();
+	// console.log(person2.LEGS);
+	console.log(person2);
+
+
+	console.log(person1.sayName == person2.sayName);
+	var person3 = new createPerson("chris",22);
+	var person5 = new createPerson("jack",22);
+	
+</script>
+</html>

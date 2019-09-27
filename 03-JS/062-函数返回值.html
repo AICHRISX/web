@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>062-函数返回值.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function sum(){
+
+		if(arguments[0] == 0){
+			return;
+		}
+
+		var result = 0;
+
+		for(var i =0;i<arguments.length;i++){
+			result += arguments[i];
+		}
+		// return 123;
+		// alert(result);
+		return result;
+		// console.log("123456");
+	}
+		alert(sum(1,2,3))
+
+
+		//Part2
+		function showName(){
+		console.log("I am chris");
+		return "I am chris";
+	}
+	console.log(showName());//undefined
+</script>
+</html>

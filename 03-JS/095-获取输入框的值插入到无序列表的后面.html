@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>095-获取输入框的值插入到无需列表的后面.html</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<button id="btn">插入</button>
+	<ul id="list">
+		
+	</ul>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oTxt = document.getElementById('btn');
+	var oTxt = document.getElementById('list');
+
+	oBtn.onclick = function(){
+		//1.获取输入的值
+		var sVal = oTxt.value;
+		//2.生成一个新的Li,将获取的值给新的Li
+		var newLi = document.createElement('li');
+		newLi.innerHTML = sVal;
+		//3.将新的Li 插入到ul中
+		
+		oUl.appendchild(newLi);
+		oTxt.value = "";
+	}
+</script>
+</html>
