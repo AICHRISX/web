@@ -3,15 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>007-面向对象高级-原型.html</title>
-</head>
-<body>
-	
-</body>
-<script>
+	<script>
+		
 	function Person(name,age){
 		this.name = name;
 		this.age = age;
 	}
+	console.log('Person.prototype:::',Person.prototype);
+	console.log('Person.prototype.constructor:::',Person.prototype.constructor);
+	console.log("Person.prototype.constructor === Person",Person.prototype.constructor === Person);
+	console.log('Person.prototype.__proto__',Person.prototype.__proto__);
+	console.log('Person.prototype.__proto__:::',Person.prototype.__proto__);
+
+	/*
 	Person.prototype.showName = function(){
 		console.log("I am"+this.name);
 	}
@@ -39,5 +43,11 @@
 	console.log("p1.__proto__:::",p1.__proto__);
 	console.log("p1.__proto__ === Person.prototype:::",p1.__proto__ === Person.prototype);
 	console.log(p1.toString());
-</script>
+	*/
+	</script>
+</head>
+<body>
+	
+</body>
+
 </html>
