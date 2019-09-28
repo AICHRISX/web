@@ -13,31 +13,36 @@
 		this.age = age;
 	}
 	Person.prototype.showName = function(){
-		console.log("I am "+ this.name);
+		console.log('I am '+ this.name);
 	}
 	Person.prototype.showAge = function(){
-		console.log("I am"+ this.age + "years old");
+		console.log('I am '+ this.age + 'years old');
 	}
+	Person.prototype.LEGS = 2;
+
 	function Student(name,age,major){
 		this.name = name;
 		this.age = age;
 		this.major = major;
 	}
 	Student.prototype.showName = function(){
-		console.log("I am"+this.name);
+		console.log('I am '+this.name);
 	}
 	Student.prototype.showAge = function(){
-		console.log("I am"+this.age + "years old");
+		console.log('I am '+this.age + 'years old');
 	}
 	Student.prototype.showMajor = function(){
-		console.log("I am come from"+this.major);
+		console.log('I am from '+this.major);
 	}
-	var p1 = new Person("chris",18);
-	p1.showName();
+	Student.prototype.LEGS = 2;
+	
+	// var p1 = new Person("chris",18);
+	// p1.showName();
 
-	var s1 = new Student("vincent",24,"computer");
-	s1.showName();
-	s1.showAge();
-	s1.showMajor();
+	// var s1 = new Student("vincent",24,"computer");
+	// s1.showName();
+	// s1.showAge();
+	// s1.showMajor();
+	
 </script>
 </html>

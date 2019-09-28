@@ -21,6 +21,7 @@
 	Person.prototype.LEGS =2;
 
 	var p1 = new Person("chris",22);
+
 	Object.defineProperties(p1,{
 		LEGS:{
 			value:2,
@@ -40,7 +41,7 @@
 			writable:false,
 			configurable:false
 		}
-	})
+	});
 	console.log(Object.getOwnPropertyDescriptor(p1,"HANDS"));
 	console.log(Object.getOwnPropertyDescriptor(p1,"name"));
 	console.log(Object.getOwnPropertyDescriptor(p1,"LEGS"));
