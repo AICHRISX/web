@@ -21,6 +21,7 @@
 	Person.prototype.LEGS =2;
 
 	var p1 = new Person("chris",22);
+
 	Object.defineProperties(p1,{
 		LEGS:{
 			value:2,
@@ -40,10 +41,10 @@
 			writable:false,
 			configurable:false
 		}
-	})
-	console.log(p1);
-	for(attr in p1){
+	});
+	for(var attr in p1){
 		console.log(attr,p1[attr]);
 	}
+	console.log(p1);
 </script>
 </html>
