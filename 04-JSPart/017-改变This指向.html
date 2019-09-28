@@ -20,16 +20,27 @@
 	// show.call({name:"chris"},1,2);
 
 	// show(1,2);
-	// // show.apply(1,[2]);
+	// show.apply(1,[2]);
 	// show.apply({name:"chris"},[1,2])	
 
 
-	show();
+	// show(1,2);
 	// var result = show.bind({name:"chris"});
 	// console.log(result);
 	// result(1,2);
+
+
+
+	// show.call({name:'Chris'},1,2);
+	// show.apply({name:'Chris'},[1,2]);
+	// var fn = show.bing({name:'Chris'});
+	// console.log(fn);
+	// fn(1,2);
+
 	show.call(null,1,2);
 	show.apply(null,[1,2]);
-	show.bind(null)(1,2);
+	var fn = show.bind(null);
+	console.log(fn);
+	fn(1,2);
 </script>
 </html>
