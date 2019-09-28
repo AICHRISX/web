@@ -11,7 +11,7 @@
 	function Person(name,age){
 		this.name = name;
 		this.age = age;
-	
+	}
 	Person.prototype.showName = function(){
 		console.log("I am"+this.name);
 	}
@@ -21,18 +21,15 @@
 	Person.prototype.LEGS =2;
 
 	var p1 = new Person("chris",22);
-	console.log(p1);
-	p1.sex = "male";
-	p1.name = "chris";
-	// p1.LEGS = 6;
-	console.log(delete p1.test);
-	console.log(delete p1.age);
-	console.log(p1);
 
-	console.log(delete Person.prototype.LEGS);
-	console.log(p1.LEGS);
-	
-	var p2 = new Person("vincent",25);
-	console.log(p2.LEGS);	
+	console.log('p1.name',p1.name);
+	console.log('delete p1.name',delete p1.name);
+	console.log('delete p1.EYES',delete p1.EYES);
+	console.log('p1.name',p1.name);
+	console.log('delete Person.prototype.LEGS',delete Person.prototype.LEGS);
+	console.log('p1.LEGS',p1.LEGS);
+
+	var p2 = new Person('leo',24);
+	console.log('p2.LEGS',p2.LEGS);
 </script>
 </html>

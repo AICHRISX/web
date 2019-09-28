@@ -11,25 +11,26 @@
 	function Person(name,age){
 		this.name = name;
 		this.age = age;
-	
+	}
 	Person.prototype.showName = function(){
 		console.log("I am"+this.name);
 	}
 	Person.prototype.showAge = function(){
 		console.log("I am"+this.age+"years old");
 	}
-	Person.prototype.LEGS =2;
+	Person.prototype.LEGS = 2;
 
 	var p1 = new Person("chris",22);
 	console.log(p1);
-	p1.sex = "male";
+	p1.EYES = 2;
 	p1.name = "chris";
-	// p1.LEGS = 6;
-	console.log(p1);
-	console.log(Person.prototype.LEGS);
-	Person.prototype.LEGS =4;
+	p1.LEGS = 6;
 	console.log(p1.LEGS);
-	var p2 = new Person("vincet",24);
-	console.log	(p2.LEGS);
+
+	// console.log(Person.prototype.LEGS);
+	// Person.prototype.LEGS =4;
+	// console.log(p1.LEGS);
+	// var p2 = new Person("vincet",24);
+	// console.log	(p2.LEGS);
 </script>
 </html>
