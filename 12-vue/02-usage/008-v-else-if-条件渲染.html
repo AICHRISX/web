@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>008-v-else-if-条件渲染.html</title>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-model="score">
+		<p>数字为:{{score}}</p>		
+		<p v-if="score >=100">p</p>		
+		<p v-else-if="score >= 80">g</p>
+		<p v-else-if="score >= 60">t</p>		
+		<p v-else>d</p>		
+	</div>
+<script src="js/vue.js"></script>
+<script>
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			score:0,
+		}
+	})
+</script>
+</html>

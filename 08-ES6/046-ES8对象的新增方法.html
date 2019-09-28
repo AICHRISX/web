@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>046-ES8对象的新增方法.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	const {
+		keys,
+		entries,
+		values,
+		getOwnPropertyDescriptors,
+		assign,
+		is
+	} = Object
+
+	Object.prototype.test = 'test'
+
+	const obj = {
+		name:'chris'
+		age:24
+	}
+
+	Object.defineProperty(obj,'contry',{
+		values:'China'
+	})
+
+
+
+	console.log(getOwnPropertyDescriptors(obj))
+	console.log('keys(obj)',keys(obj))
+	console.log('')
+	console.log('')
+
+
+	// const result = assing({},obj)
+	// console.log('obj',obj)
+	// console.log('result',result)
+	// console.log('result==obj',result==obj)
+
+
+
+	const DEFAULT = {
+		js:true,
+		interval:600
+	}
+	const options = {
+		js:false
+	}
+	const target = {}
+
+	const result = assign(target.DEFAULT.options)
+
+	console.log(target)
+	console.log(result)
+	console.log(target==result)
+	console.log(DEFAULT)
+	console.log(options)
+
+
+	console.log('+0 === -0',+0 === -0)
+	console.log('is(+0,-0)',is(+0,-0))
+</script>
+</html>

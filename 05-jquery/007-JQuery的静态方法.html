@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>007-JQuery的静态方法.html</title>
+</head>
+<body>
+	
+
+</body>
+<script src="js/01.js"></script>
+<script>
+	$(function(){
+		var arr = [1,23,54,76,87,87];
+		/*
+		var res = arr.map(function(value,index){
+			console.log("value index",value,index);
+			return value*10;
+		});
+		console.log(res);
+		*/
+		var res = $.map(arr,function(value,index){{
+			console.log("index value",index,value);
+			return value;
+		}});
+		console.log(res);
+		var likeArr = {0:"aa",1:"bb",2:"cc",length:3};
+
+		var aDiv = document.getElementsByTagName('div');
+		var res = $.map(aDiv,function(value,index){
+			console.log("index value",index,value);
+			return value;
+		});
+		console.log(res);
+	});
+</script>
+</html>

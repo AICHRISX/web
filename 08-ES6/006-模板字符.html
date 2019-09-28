@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>006-模板字符.html</title>
+</head>
+<body>
+	<button id="btn">..</button>
+</body>
+<script>
+	var btn = document.getElementById('btn')
+	var data = ["xxx","sss","zzz"]
+	btn.onclick = function(){
+		var html = '';
+		html +='<ul>'
+		for(var i =0;i<data.length;i++){
+			html +='<ul>s{data[li]}</ul>'
+		}
+		html += '</ul>'
+		document.body.innerHTML = html
+	}
+</script>
+</html>

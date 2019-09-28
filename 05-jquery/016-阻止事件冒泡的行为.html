@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>016-阻止事件冒泡的行为.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.dd{
+			width: 100px;
+			height: 100px;
+			background: skyblue;
+		}
+		.ss{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="btn">点我试试</div>
+	<div class="dd"></div>
+	<div class="ss"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('p').on('click',function(){
+			alert('p click');
+		})
+		$('a').on('click',function(ev){
+			alert('a click');
+			return false;
+		})
+	});
+</script>
+</html>

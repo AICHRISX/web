@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>044-class面向对象.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	classs Person{
+		constructor(name,age){
+			this.name = name
+			this.age = age
+		}
+		sayName(){
+			console.log('My name is'+this.name)
+		}
+		sayAge(){
+			console.log('I am'+this.age+'years old')
+		}
+		static sayHi(){
+			console.log('hello world')
+		}
+	}
+	const person = new Person('chris',24)
+	console.log(person)
+	person.sayName()
+	person.sayAge()
+	Person.sayHi()
+
+
+	class Student extends Person{
+		constructort(name,age,major){
+			super(name,age)
+			this.major = major
+		}
+		sayMajor(){
+			console.log('I am form'+this.major)
+		}
+	}
+	const student = new Student('xxx',26,major)
+
+	console.log(student)
+	s1.sayName()
+	s1.sayage()
+	s1.sayMajor()
+</script>
+</html>

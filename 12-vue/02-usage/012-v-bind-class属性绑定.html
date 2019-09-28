@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>012-v-bind-class属性绑定.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.active{
+			background-color: skyblue;
+		}
+		.error{
+			color: red;
+		}
+		p{
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<p>阿斯顿法国红酒快乐</p>	
+		<p class="active error">123456789</p>	
+		<p :class="{active:true,error:true}">这是一段文字</p>	
+		<p :class="{active:isActive,error:hasError}">自行车</p>	
+		<p :class="['active','error']">官方活动结束了空气</p>	
+		<p :class="[isActive ? 'active' : '','error']">示范户在哪都能屈能伸</p>	
+		<p :class="objClass">到七月份拿开你车</p>
+		<p :class="arrClass">啊收纳的那地方</p>	
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	var vm = new Vue({
+		el:'#app',
+		data: {
+			isActive:true,
+			hasError:false,
+			objClass:{
+				active:true,
+				error:false
+			},
+			arrClass:['active','error']
+		}
+	})
+</script>
+</html>

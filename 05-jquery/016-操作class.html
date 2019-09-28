@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>016-操作class.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: skyblue;
+			margin: 20px;
+			border: 1px solid #aaa;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background-color: #fbf000;
+		}
+		.box3{
+			width: 100px;
+			height: 100px;
+			background-color: #fb9660;
+		}
+	</style>
+</head>
+<body>
+	<button><切换></button>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		var oBtn = $('button')[0];
+		oBtn.onclick = function(){
+			$('div').toggleClass('box3');
+		}
+	})
+</script>
+</html>

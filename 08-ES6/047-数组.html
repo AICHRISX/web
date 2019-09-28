@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>047-数组.html</title>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+<script type="text/javascript">
+	const likeArr = {
+		0:'data1',
+		1:'data2',
+		length:2
+	}
+	console.log('likeArr',likeArr)
+	// console.log(Array.from(likeArr))
+	const doms = document.getElementsByTagName('div')
+
+	console.log('doms',doms)
+	console.log('(...doms)',(...doms))
+	console.log(Array.from(doms))
+
+
+	function fn(){
+		console.log()
+	}
+
+
+
+	const arr = [23,34,23,14,54]
+	console.log(arr.find(n=>40))
+	console.log(arr.findIndex(n=>500))
+	console.log(arr.includes(89,3))
+</script>
+</html>

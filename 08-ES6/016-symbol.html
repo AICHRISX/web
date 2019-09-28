@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>016-symbol.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let s1 = Symbol('chris')
+	let s2 = Symbol('chris')
+	console.log(s1)
+	console.log(s2)
+	console.log(s1 == s2)
+
+
+	let obj = {
+		name:'chris',
+		[s1]:'xxx',
+		[s2]:'zzz'
+	}
+	// console.log(obj)
+	// console.log(obj[s1])
+	// console.log(obj[s2])
+
+	// for(let key in obj){
+	// 	console.log(key)
+	// }
+	let keys = Reflect.ownKeys(obj)
+	for(let Key in Keys){
+		console.log(obj([keyskey]))
+	}
+</script>
+</html>

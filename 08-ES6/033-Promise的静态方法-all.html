@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>033-Promise的静态方法-all.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	const p1 = Promise.resolve('p1 data')
+	const p2 = Promise.resolve('p2 data')
+	const p3 = Promise.resolve('p3 data')
+	const p4 = Promise.resolve('p4 reject')
+
+	const p = Promise.all([p1,p2,p3])
+
+	p
+	.then(data=>{
+		console.log(data)
+	})
+	.catch(err=>{
+		console.log(err)
+	})
+</script>
+</html>

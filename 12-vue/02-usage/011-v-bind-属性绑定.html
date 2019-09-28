@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011-v-bind-属性绑定.html</title>
+</head>
+<body>
+	<div id="app">
+		<a href="https://www.tmall.cpm">天猫</a>
+		<a v-bind:href="tmallUrl">天猫</a>		
+	</div>
+<script src="js/vue.js"></script>
+<script>
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			tmallUrl:'https://www.tmall.com'
+		}
+	})
+</script>
+</html>

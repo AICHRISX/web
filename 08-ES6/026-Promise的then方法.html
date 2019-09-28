@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>026-Promise的then方法.html</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	// const promise = new Promise((resolve,reject)=>{  
+	// 	setTimeout(()=>{
+	// 		resolv('ok')
+	// 	},0)
+	// 	console.log('in promise')
+	// 	//异步处理逻辑
+	// 	//如果异步处理成功调用resolve此时pending实例由pending =>
+	// 	// resolve('ok')
+	// 	// reject('error')
+	// 	setTimeout(()=>{
+	// 		// resolve('ok')
+	// 		reject('error')
+	// 	},0)
+	// })
+	//...
+ // 	const p1 = promise
+ // 	.then(data =>{
+ // 		console.log(data)
+ // 		return data + 'good'
+ // 	})
+ // 	p1
+ // 	.then(data=>{
+ // 		console.log(data)
+ // 	})
+ // 	console.log('p1',p1)
+ 	// promise
+ 	// .then(data=>{
+ 	// 	return data + 'good'
+ 	// })
+ 	// .then(data=>{
+ 	// 	console.log(data)
+ 	// })
+
+ 	let p2 = ;
+ 	const p1 = promise
+ 	.then(data=>{
+ 		p2 = new Promise((resolve,reject)=>{
+ 			resolve('good')
+ 		})
+ 		return p2
+ 	})
+
+
+ 	p1.then((data)=>{
+	console.log('data=',data)
+ 	console.log('p1',p1)
+ 	console.log('p2',p2)
+
+ 	console.log('p1==p2',p1==p2)
+ 	})
+ 	
+ 	
+ 	//1.promise的then方法返回的是否是promise对象，then方法都会返回一个新的promise对象
+ 	//2.新的promise对象的then方法的值是上一个promise。then方法的返回值，如果是具体的数据，返回值就是数据，如果是promise，返回值就是promise成功时候的返回值
+
+</script>
+</html>

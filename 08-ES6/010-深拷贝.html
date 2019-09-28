@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010-深拷贝.html</title>
+</head>
+<body>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	var obj = {
+		name:"chris",
+		age:24,
+		friend:{
+			name:'vincent'
+		},
+		pets:{
+			'Cat','Dog'
+		}
+	}
+
+	//直接复制
+	// const obj1 = obj
+
+	// obj1.name = 'devi'
+
+	
+
+	// const obj1 = {...obj}
+
+
+
+	// console.log('obj',obj)
+	// console.log('obj1',obj1)
+
+	//循环遍历对象
+	// const obj1 = {}
+	// for(let key in obj){
+	// 	obj1{key} = obj{key}
+	// 	}
+	// 		obj1.name = 'devi'
+	// 		obj1.friend.name ='devi' 
+	// 		obj.pets.push('Tigger')
+	// 		console.log('obj',obj)
+	// 		console.log('obj1',obj1)
+
+
+    //写深拷贝的程序
+	function getDataType(data){	
+		if(data instanceof Array){
+			return 'array'
+		}
+		else if(data instanceof Object){
+			return 'object'
+		}
+	}
+
+
+	function deepCopy(data){
+		const type = getDataType(data)
+		let result
+		if(type == 'array'){
+			result = []
+		}
+		else if(type =='object'){
+			result = []
+		}else{
+			return data
+		}
+		//循环遍历数组或对象
+		for(let key in data){
+			let val = data{key}
+			let valType = getDataType(val)
+			if(valType == 'array' || valType == 'object'){
+				result[key] = dataCopy(val)
+			}else{
+				result[key] = val
+			}
+		}
+		return result
+	}
+	//把对象需要拷贝的对象。字符串转换为对象
+	const obj1 = JSON.parse(JSON.stringify(obj)) 
+	obj1.name = "chris"
+	obj1.friend.name = "vincent"
+	obj1.pets.push('Tigger')
+	obj1.
+
+</script>
+</html>

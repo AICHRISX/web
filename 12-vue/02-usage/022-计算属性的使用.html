@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>022-计算属性的使用.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.large-box{
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+			background-color: gray;
+			margin: 50px auto;
+		}
+		.big-box{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #000;
+			background-color: blue;
+			margin: 50px auto;
+		}
+		.small-box{
+			width: 150;
+			height: 150px;
+			border: 1px solid #000;
+			background-color: red;
+			margin: 50px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<p>firstName:'Chris'</p>
+		<p>lastName:'Els'</p>
+		<p>fullName:{{fullName}}</p>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	var vm = new Vue({
+		el: '#app',
+		data: {
+			firstName:'Chris',
+			lastName:'Els'
+		},
+		methods:{
+			getFullName(){
+				return this.firstName + '' + this.lastName
+			}
+		},
+		computed:{
+			fullName(){
+				return this.firstName + '' + this.lastName
+			}
+		}
+
+})
+</script>
+</html>
