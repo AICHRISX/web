@@ -21,24 +21,51 @@
 	Person.prototype.LEGS =2;
 
 	var p1 = new Person("chris",22);
-	// console.log(Object.prototype);.
-	console.log(p1);
-	console.log(p1.name);
-	console.log(p1.age);
-	console.log(p1.LEGS);
+/*
+	if(p1.name){
+		console.log(p1.name);
+	}else{
+		console.log('nothing...');
+	}
+*/
+	if(p1.hasOwnProperty('name')){
+		console.log(p1.name);
+	}else{
+		console.log('nothing...');
+	}
+		console.log(p1.LEGS);
+	if(p1.hasOwnProperty('LEGS')){
+		console.log(p1.LEGS);
+	}else{
+		console.log('nothing...');
+	}
+	if('LEGS' in p1){
+		console.log(p1.LEGS);
+	}else{
+		console.log('nothing...');
+	}
+	if('name' in p1){
+		console.log(p1.name);
+	}else{
+		console.log('nothing...');
+	}
 
-
-	// console.log(p1.hasOwnProperty("name"));
- 	// console.log(p1.hasOwnProperty("age"));
- 	// console.log(p1.hasOwnProperty("nam"));
- 	// console.log("LEGS" in p1);
-
+	if(hasOwnPrototype(p1,'LEGS')){
+		console.log(p1.LEGS);
+	}
+	if(hasOwnPrototype(p1,'name')){
+		console.log(p1.name);
+	}
+	function hasOwnPrototype(obj,attr){
+		return !obj.hasOwnProperty(attr) && (attr in obj)
+	}
+	/*
  	function isInPrototype(obj,attr){
  		return !obj.hasOwnProperty(attr)&&(attr in obj);
  	}
  	console.log(isInPrototype(p1."name"));
  	console.log(isInPrototype(p1."age"));
  	console.log(isInPrototype(p1."LEGS"));
- 	
+ 	*/
 </script>
 </html>
