@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>037-设计模式-发布订阅者模式-汇率计算.html</title>
+	
+</head>
+<body>
+<!-- 	<p>
+		人民币cny: <input type="text">	
+	</p>
+	<p>
+		美元usd:<span>0.69120414</span>
+	</p>
+	<p>
+		日元jpy:<span>12.232</span>
+	</p> -->
+</body>
+<script>
+	(function(w){
+		function Local(){
+
+		}
+		Local.prototype = {
+			constructor:Local
+		}
+		w.Local = Local;
+	})(window);
+	
+	(function(w){
+		function Foreign(){
+
+		}
+		Foreign.prototype = {
+			constructor:Foreign
+		}
+		w.Foreign = Foreign;
+	})(window);
+</script>
+</html>
