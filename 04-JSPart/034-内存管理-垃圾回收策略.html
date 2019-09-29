@@ -4,7 +4,21 @@
 	<meta charset="UTF-8">
 	<title>034-内存管理-垃圾回收策略.html</title>
 	<script>
-		
+		/*
+		var obj = {
+			name:'Chris'
+		}
+		obj = {
+			name:'CCC';
+		}*/
+		var obj1 = {
+			name:'Chris'
+		}
+		var obj2 = {
+			name:'will'
+		}
+		obj1.p1 = obj2;
+		obj2.p1 = obj1;
 	</script>
 </head>
 <body>
