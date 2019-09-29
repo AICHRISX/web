@@ -16,7 +16,7 @@
 		console.log("I am "+ this.name);
 	}
 	Person.prototype.showAge = function(){
-		console.log("I am"+ this.age + "years old");
+		console.log("I am "+ this.age + "years old");
 	}
 	function Student(name,age,major){
 		// this.name = name;
@@ -39,9 +39,9 @@
 	*/
 	Student.prototype = Person.prototype;
 	Student.prototype.showMajor = function(){
-		console.log("I am come from"+this.major);
+		console.log("I am from "+ this.major);
 	}
-	var s1 = new Student("chris",18,"COM");
+	var s1 = new Student("chris",18,"computer");
 	s1.showName();
 	s1.showAge();
 	s1.showMajor();
