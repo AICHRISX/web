@@ -9,40 +9,43 @@
 </body>
 <script>
 	function Person(name,age){
-		console.log(11);
+		console.log(1);
 		this.name = name;
 		this.age = age;
 	}
-	Object.defineProperty(Person.prototype,"showName",{
+	Person.prototype.showName = function(){
+		console.log('I am '+ this.name);
+	}
+	Object.defineProperty(Person.prototype,"showAge",{
 		value:function(){
-			console.log("I am"+ this.name);
+			console.log("I am "+ this.age + 'years old');
 		},
 		enumerable:false
 	}) 
-	Person.prototype.showAge = function(){
-		console.log("I am"+this.age+"years old");
-	}
+	Person.prototype.LEGS = 2;
+
 	function Student(name,age,major){
 		//属性继承
 		Person.call(this,name,age);
 		this.major = major;
 	}
-	Student.prototype.__proto__ = Person.prototype;
-	// Student.prototype = new Person();
-	// Student.prototype.constructor = Student;
+	// Student.prototype.__proto__ = Person.prototype;
+	Student.prototype = new Person();
+	Student.prototype.constructor = Student;
 	console.log(Student.prototype);
 	Student.prototype.showMajor = function(){
-		console.log("I am xxx from"+this.major);
+		console.log("I am from "+this.major);
 	}
 	var s1 = new Student("chris",18,"COM");
+	console.log(s1);
 	s1.showName();
 	s1.showAge();
 	s1.showMajor();
 
 
 	// var p1 = new Person("vincent",24);
-		// p1.showName();
-		// p1.showMajor();
-		// p1.showAge();
+	// 	p1.showName();
+	// 	p1.showMajor();
+	// 	p1.showAge();
 </script>
 </html>
