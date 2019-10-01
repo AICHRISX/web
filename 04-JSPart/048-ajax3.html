@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>046-ajax2.html</title>
+	<title>048-ajax3.html</title>
 
 </head>
-<!-- 发送基本ajax请求 -->
+<!-- 发送基本ajax请求-POS -->
 <body>
-	<button id="btn">获取数据</button>
+	<button id="btn">发送POST请求</button>
 </body>
 <script>
 	var oBtn = document.getElementById('btn');
@@ -16,13 +16,13 @@
 		var oAjax = new XMLHttpRequest();
 		console.log('after new::',oAjax.readyState);// 0 没有初始化，还没有调用open方法
 		//2.建立连接（拨号）
-		oAjax.open('GET','http://127.0.0.1:3000/getData?name=Chris',true);
+		oAjax.open('POST','http://127.0.0.1:3000/047-data.json',true);
 		console.log('after open::',oAjax.readyState);//启动，已调用OPEN方法但是还没有调用send方法
 
 		//可选，设置请求头
 		oAjax.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 		//3.发送信息(说话)
-		oAjax.send();
+		oAjax.send('{"name":"Chris","age":24}');
 		//4.监听事件接收数据（听）
 		oAjax.onreadystatechange = function(){
 			console.log('in onreadystatechange::',oAjax.readyState);
