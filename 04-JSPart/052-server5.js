@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-01 11:41:18
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-01 16:07:23
+* @Last Modified time: 2019-10-02 09:47:56
 */
 /*
 	可以响应并返回文件
@@ -13,6 +13,7 @@ var fs   = require('fs');
 var url = require('url');
 
 var server = http.createServer(function(req,res){
+	res.setHeader("Access-Control-Allow-Origin",'http://127.0.0.1:3000');
 	var urlStr = req.url;
 	console.log(req.method);
 	console.log('req.url:::',urlStr);
