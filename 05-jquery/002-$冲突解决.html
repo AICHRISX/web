@@ -8,31 +8,16 @@
 	 
 </body>
 <script>
-	/*
-	jQuery的常见静态方法
-	$each (arr,function(index,value){
-
-	})
-
-	$.map(arr.function(value,index){
-
-	})
-	*/
-
-	(function(w){
-		function $(){
-		console.log(11);
+	(function(){
+		window.$ = function(){
+			console.log('test $!!');
 		}
-		w.$ = $;
 	})(window);
 </script>
 <script src="js/jquery-1.12.4.js"></script>
 <script>
-	// $();
-	// jQuery.noConflict();
 	var kz = jQuery.noConflict();
-	// console.log($);
-	// console.log(jQuery);
+	$();
 	kz(function(){
 		console.log(22)
 	})

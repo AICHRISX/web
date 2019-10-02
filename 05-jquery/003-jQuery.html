@@ -2,18 +2,44 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>	过滤器</title>
+	<title>003-jQuery.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+	</style>
 </head>
 <body>
-	<div class="inut"></div>
+	<button>点击</button>
 	<div></div>
 	<div></div>
 	<div></div>
 	<div></div>
 	<div></div>
 </body>
-<script src="js/01.js"> 
-	console.log($('input').eq(0).attr('name','test1111'));	  
-	console.log($('input').eq(1).attr('name','test2222'));
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	/*
+	var oBtn = document.getElementsByTagName('button')[0];
+	var aDiv = document.getElementsByTagName('div');
+	oBtn.onclick = function(){
+		for(var i = 0;i<aDiv.length;i++){
+			aDiv[i].style.background = 'red';
+		}
+	}
+	*/
+	$(function(){
+		$('button').click(function(){
+			$('div').css({
+				background:'red'
+			})
+		})
+	});
 </script>
 </html>
