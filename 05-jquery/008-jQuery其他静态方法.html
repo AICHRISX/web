@@ -7,38 +7,83 @@
 <body>
 	
 </body>
-<script src="js/01.js">
-</script>
+<script src="js/jquery-1.12.4.js"></script>
 <script>
-	$(function(){
-		var str = "abc";
-		console.log(str);
-		console.log($.trim(str));
+	// $(function(){
+	// 	var str = "abc";
+	// 	console.log(str);
+	// 	console.log($.trim(str));
 
-		console.log($.isWindow(window));
-		console.log($.isWindow({}));
+	// 	console.log($.isWindow(window));
+	// 	console.log($.isWindow({}));
 
-		console.log($.isArray([1,2,3]));
-		console.log($.isArray({0:"aa",1:"bb",2:"cc"}));
+	// 	console.log($.isArray([1,2,3]));
+	// 	console.log($.isArray({0:"aa",1:"bb",2:"cc"}));
 
-		console.log($.isFunction(function(){}));
-		console.log($.isFunction({}));
+	// 	console.log($.isFunction(function(){}));
+	// 	console.log($.isFunction({}));
 
-		var obj1 = {name:'tom',age:18};
-		var obj2 = {name:'leo'};
-		var res = $.extend({},obj1,obj2);
-		console.log("res",res);
-		console.log("obj1",obj1);
-		console.log("obj2",obj2);
+	// 	var obj1 = {name:'tom',age:18};
+	// 	var obj2 = {name:'leo'};
+	// 	var res = $.extend({},obj1,obj2);
+	// 	console.log("res",res);
+	// 	console.log("obj1",obj1);
+	// 	console.log("obj2",obj2);
 
-		function show(){
-			console.log(this);
-		}
-		show();
-		// var res =$.proxy(show,{name:"anmy",sex:"famale"});
-		var res = $.proxy(show,null);
-		console.log(res);
-		res();
-	});	
+	// 	function show(){
+	// 		console.log(this);
+	// 	}
+	// 	show();
+	// 	// var res =$.proxy(show,{name:"anmy",sex:"famale"});
+	// 	var res = $.proxy(show,null);
+	// 	console.log(res);
+	// 	res();
+	// });	
+
+
+	var str = '  abc d  ';
+	console.log(str);
+	console.log($.trim(str));
+	console.log($.isWindow(window));
+	console.log($.isWindow({}));
+	console.log($.isArray([1,3,5]));
+	console.log($.isArray({0:"aa",1:"bb",length:2}));
+	console.log($.isFunction(function(){}));
+	console.log($.isFunction({}));
+
+	var obj1 = {name:"Chris",age:24};
+	var obj2 = {name:"JT",age:25};
+
+
+
+	// var obj3 = $.extend(obj1,obj2);
+
+	// console.log(obj3);
+	// console.log(obj1);
+	// console.log(obj1 == obj3);
+
+	var obj4 = $.extend({},obj1,obj2);
+	console.log(obj4);
+	console.log(obj1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 </html>
