@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-01 11:41:18
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-02 09:47:56
+* @Last Modified time: 2019-10-02 11:06:09
 */
 /*
 	可以响应并返回文件
@@ -13,7 +13,12 @@ var fs   = require('fs');
 var url = require('url');
 
 var server = http.createServer(function(req,res){
-	res.setHeader("Access-Control-Allow-Origin",'http://127.0.0.1:3000');
+	
+	res.setHeader("Access-Control-Allow-Origin",'*');
+	res.setHeader("Content-Type",'text/html');
+	res.setHeader("Access-Control-Expose-Headers",'Date,Access-Control-Allow-Origin,Kuazhu-Test')
+	res.setHeader('kuazhu-Test','kuazhu-Test-Content');
+	
 	var urlStr = req.url;
 	console.log(req.method);
 	console.log('req.url:::',urlStr);
@@ -50,7 +55,6 @@ var server = http.createServer(function(req,res){
 	}else{
 		res.end('ok');
 	}
-	
 });
 /*
 局域网测试
