@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>055-ajax7.html</title>
+	<title>055-ajax8.html</title>
 
 </head>
 <!-- 发送基本ajax请求-POS
 	 封装函数
-	 跨域-简单请求
+	 跨域-复杂请求
  -->
 <body>
 	<button id="btn">测试</button>
@@ -22,6 +22,8 @@
 			oAjax.open(method,url,true);
 			//可选，设置请求头
 			oAjax.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+			//oAjax.setRequestHeader('Kuazhu-Test-Header','Kuazhu-Test-Header-Content');
+
 			//3.发送信息(说话)
 			oAjax.send(data);
 		}else if(method.toUpperCase() == 'GET'){
@@ -30,6 +32,12 @@
 			}
 			//2.建立连接（拨号）
 			oAjax.open(method,url,true);
+			//3.发送信息(说话)
+			oAjax.send();
+		}else{
+			//2.建立连接（拨号）
+			oAjax.open(method,url,true);
+			oAjax.setRequestHeader('Kuazhu-Test-Header','Kuazhu-Test-Header-Content');
 			//3.发送信息(说话)
 			oAjax.send();
 		}
@@ -61,34 +69,16 @@
 	}
 	var oBtn = document.getElementById('btn');
 	oBtn.onclick = function(){
-		/*
-		ajax('POST',
-			'http://127.0.0.1:3000/',
-			'{"name":"Chris","age":24}',
-			function(obj){
-				console.log(obj);
-			},
-			function(status){
-				console.log(status);
-			}
-		);
-		*/
-		ajax('get',
-			'http://127.0.0.1:3001/047-data.json',
-			'',
-			function(arr){
-				var oUl = document.createElement('ul');
-				for(var i = 0;i<arr.length;i++){
-					var oLi = document.createElement('li');
-					oLi.innerHTML = '姓名:'+arr[i].name+" 年龄:"+arr[i].age;
-					oUl.appendChild(oLi);
+			ajax('put',
+				'http://127.0.0.1:3001/edit',
+				'',
+				function(obj){
+					console.log(obj);
+				},
+				function(status){
+					console.log(status);
 				}
-				document.body.appendChild(oUl);
-			},
-			function(status){
-				console.log(status);
-			}
-		);
+			);
 	}
 </script>
 </html>
