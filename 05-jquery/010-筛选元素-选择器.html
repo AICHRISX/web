@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>010-筛选元素.html</title>
+	<title>010-筛选元素-选择器.html</title>
 </head>
 <body>
 	<div>div1</div>
-	<div class="div2">div2</div>
-	<div id="div3">div3</div>
+	<div id="box1">div2</div>
+	<div class="box2">div3</div>
 </body>
 <script src="js/jquery-1.12.4.js"></script>
 <script>	
 	$(function(){
 		console.log($('div'));
-		console.log($('body>.div2'));
-		console.log($('#div3'));
-	});
+		console.log($('#box1'));
+		console.log($('.box2'));
+	})
 </script>
 </html>

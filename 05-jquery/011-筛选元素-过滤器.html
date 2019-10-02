@@ -5,20 +5,22 @@
 	<title>011-筛选元素-过滤器.html</title>
 </head>
 <body>
-			<div>01</div>
-			<div>02</div>
-			<div>03</div>
-			<div>04</div>
-			<div>05</div>
-			<div>06</div>
-			<div>07</div>
-			<div>08</div>
-			<div>09</div>		
+	<div>01</div>
+	<div>02</div>
+	<div>03</div>
+	<div>04</div>
+	<div>05</div>
+	<div>06</div>
+	<div>07</div>
+	<div>08</div>
+	<div>09</div>		
 </body>
 <script src="js/jquery-1.12.4.js"></script>
 <script>	
 	$(function(){
-		console.log($('div:eq()'));
+		console.log($('div:eq(1)'));
+		console.log($('div:eq(2)'));
+		console.log($('div:eq(-1)'));
 	})
 </script>  
 </html>
