@@ -4,39 +4,33 @@
 	<meta charset="UTF-8">
 	<title>016-操作class.html</title>
 	<style>
-		*{
+		/**{
 			margin: 0;
 			padding: 0;
-		}
-		div{
+		}*/
+		.box1{
 			width: 100px;
 			height: 100px;
-			background-color: skyblue;
 			margin: 20px;
 			border: 1px solid #aaa;
 		}
 		.box2{
-			width: 100px;
-			height: 100px;
 			background-color: #fbf000;
 		}
 		.box3{
-			width: 100px;
-			height: 100px;
 			background-color: #fb9660;
 		}
 	</style>
 </head>
 <body>
-	<button><切换></button>
-	<div class="box1">1</div>
-	<div class="box2">2</div>
-	<div class="box3">3</div>
+	<button id="btn"><切换></button>
+	<div class="box1 box2">1</div>
+	<div class="box1 box2">2</div>
 </body>
 <script src="js/jquery-1.12.4.js"></script>
 <script>
 	$(function(){
-		var oBtn = $('button')[0];
+		var oBtn = document.getElementById('btn');
 		oBtn.onclick = function(){
 			$('div').toggleClass('box3');
 		}
