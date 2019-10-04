@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>030-自定义事件.html</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		/*
+		$('div').on('click',function(){
+			console.log('click');
+		})
+		*/
+		/*
+		$('div').on('Chris',function(){
+			console.log('Chris');
+		});
+		console.log('------');
+		$('div').trigger('Chris');
+		*/
+		$('div').on('Chris',function(ev,arg){
+			console.log('Chris');
+			console.log('Chris',arg);
+		});
+		// $('div').trigger('Chris','Vin');
+		$('div').trigger('Chris',{name:'Chris'});
+	})
+</script>
+</html>
