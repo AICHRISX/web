@@ -42,10 +42,13 @@
 		$('.s').on('click',function(ev){
 			alert('s');
 			// return false;
-			console.log(ev);
+			// console.log(ev);
+			// ev.stopPropagation();
 		});
-		$('.f').on('click',function(){
+		$('.f').on('click',function(ev){
 			alert('f');
+			// return false;
+			ev.stopPropagation();
 		});
 		$('.gf').on('click',function(){
 			alert('gf');
