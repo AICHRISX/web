@@ -26,42 +26,42 @@
 </body>
 <script src="js/jquery-1.12.4.js"></script>
 <script>
-$(function(){
-	$('#target')
-	.on('dragstart',function(){
-		//当元素开始拖动时触发
-		// console.log('container::dragstart')
-	})
-	.on('drag',function(){
-		//被拖动元素拖动时触发
-		// console.log('target::drag')
-	})
-	.on('dragend',function(){
-		//拖拽时松开鼠标时触发
-		console.log('target::dragend')
-	})
-
-
-	$('#container')
-		.on('drop',function(){
-			//当放置被拖动元素时触发
-			//console.log('container::drop')
-			$(this).append($('#target'))
+	$(function(){
+		$('#target')
+		.on('dragstart',function(){
+			//当元素开始拖动时触发
+			// console.log('container::dragstart')
 		})
-		.on('dragover',function(ev){
-			//被拖动元素正在到放置到容器时触发，默认无法把元素放置到其他元素中，如果需要设置允许设置，我们必须阻止对元素的默认处理方式
-			//console.log('container::dragover')
-			ev.preventDefault()
-		})
-		.on('dragenter',function(){
-
-		})
-		.on('dragleave',function(){
-
+		.on('drag',function(){
+			//被拖动元素拖动时触发
+			// console.log('target::drag')
 		})
 		.on('dragend',function(){
-			// console.log('container::dragend')
+			//拖拽时松开鼠标时触发
+			console.log('target::dragend')
 		})
-})
+
+
+		$('#container')
+			.on('drop',function(){
+				//当放置被拖动元素时触发
+				//console.log('container::drop')
+				$(this).append($('#target'))
+			})
+			.on('dragover',function(ev){
+				//被拖动元素正在到放置到容器时触发，默认无法把元素放置到其他元素中，如果需要设置允许设置，我们必须阻止对元素的默认处理方式
+				//console.log('container::dragover')
+				ev.preventDefault()
+			})
+			.on('dragenter',function(){
+
+			})
+			.on('dragleave',function(){
+
+			})
+			.on('dragend',function(){
+				// console.log('container::dragend')
+			})
+	})
 </script>
 </html>
