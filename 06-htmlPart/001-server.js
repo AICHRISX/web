@@ -6,9 +6,13 @@ var server = http.createServer(function(req,res){
 	var urlStr = req.url;
 	console.log(req.method);
 	console.log('req.url:::',urlStr);
-	console.log("cookie::",req.headers.coookie);
+	console.log("cookie::",req.headers.cookie);
 	
-	res.setHeader('Set-Cookie',["username=Chris"]);
+	// var oDate = new Date('2019-01-03 12:00:21').toUTCString();
+	// res.setHeader('Set-Cookie',["username=Chris;expires="+oDate]);
+
+
+	// res.setHeader('Set-Cookie',["username=Chris;max-age=10"]);
 
 	if(urlStr == '/favicon.ico'){
 		res.end('favicon.ico');
