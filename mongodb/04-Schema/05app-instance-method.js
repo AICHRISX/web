@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-13 15:34:16
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-13 20:37:52
+* @Last Modified time: 2019-10-13 21:56:44
 */
 /*
 * @Author: Chris
@@ -13,6 +13,8 @@
 const mongoose = require('mongoose')
 
 const UserModel = require('./models/user.js')
+const BlogModel = require('./models/blog.js')
+
 
 //1.连接数据库
 mongoose.connect('mongodb://localhost/AI',{useNewUrlParser: true})
@@ -26,23 +28,14 @@ db.on('error',(err)=>{
 
 db.once('open',()=>{
 	console.log('connection db success')
-
-/*
+	//构建测试数据
+	//构建用户
+	/*
 	UserModel.insertMany({
 		name:"Chris",
-		age:24
-	})
-	.then(docs=>{
-		console.log('insert users:',docs)
-	})
-	.catch(err=>{
-		console.log('insert users err:',err)
-	})
-*/
-/*
-UserModel.insertMany({
-		name:"Chris",
-		age:'24'
+		age:'24',
+		major:"Music",
+		phone:"13212345123"
 	})
 	.then(docs=>{
 		console.log('insert users:',docs)
@@ -52,6 +45,19 @@ UserModel.insertMany({
 	})
 */
 
+BlogModel.insertMany([{
+	title:"blog1",
+	content:"blog1 content",
+	author:"5da2c042c7d1e814add3b134"
+},{
+	
+}])
+.then(docs=>{
+	console.log('insert blogs:',docs)
+})
+.catch(err=>{
+	console.log('insert blogs err:',err.message)
+})
 
 
 
@@ -62,3 +68,15 @@ UserModel.insertMany({
 
 	
 })
+
+
+
+
+
+
+
+
+
+
+
+

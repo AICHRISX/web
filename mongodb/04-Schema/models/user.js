@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-13 15:27:52
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-13 17:11:40
+* @Last Modified time: 2019-10-13 20:41:15
 */
 /*
 * @Author: Chris
@@ -39,7 +39,8 @@ const UserSchema = new mongoose.Schema({
 		}
 	},
 	isLocked:{
-		type:Boolean
+		type:Boolean,
+		default:false
 	},
 	createdAt:{
 		type:Date,
