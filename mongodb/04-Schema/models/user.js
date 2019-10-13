@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-13 15:27:52
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-13 16:56:32
+* @Last Modified time: 2019-10-13 17:11:40
 */
 /*
 * @Author: Chris
@@ -30,7 +30,13 @@ const UserSchema = new mongoose.Schema({
 		enum:["Musicman","Computer"]
 	},
 	phone:{
-		type:String
+		type:String,
+		validate:{
+			validator:function(val){
+				return /1[358]\d{9}/.test(val)
+			},
+			message:'{VALUE}不是合法的手机号'
+		}
 	},
 	isLocked:{
 		type:Boolean

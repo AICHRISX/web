@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-13 15:34:16
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-13 16:57:07
+* @Last Modified time: 2019-10-13 17:12:56
 */
 /*
 * @Author: Chris
@@ -30,6 +30,7 @@ db.once('open',()=>{
 		name:"Chris",
 		age:'24',
 		major:"Music"
+		phone:"10212345123"
 	})
 	.then(docs=>{
 		console.log('insert users:',docs)
