@@ -2,9 +2,24 @@
  * @Author: Chris
  * @Date:   2019-10-13 12:01:01
  * @Last Modified by:   Chris
- * @Last Modified time: 2019-10-13 14:00:54
+ * @Last Modified time: 2019-10-13 14:12:07
  */
 const mongoose = require('mongoose')
+
+const getRandom = (min,max)=>{
+	return Math.round(min + (max-min)*Math.random())
+}
+const names = ["Chris","justin","Jack","Oliver","luke","Admn","piter"]
+const majors = ["Art","Musicman","Sport","Computer","English"]
+
+const getName = ()=>names[getRandom(0,names.length-1)]
+const getMajor = ()=>majors[getRandom(0,majors.length-1)]
+
+
+
+
+
+
 
 //1.连接数据库
 mongoose.connect('mongodb://localhost/AI', { useNewUrlParser: true })
@@ -98,9 +113,21 @@ UserModel.create(
 	}
 })
 */
-
-
-
+	const arr = []
+	for(let i = 0;i<100;i++){
+		arr.push({
+			name:getName(),
+			age:getRandom(10,150),
+			major:getMajor(),
+		})
+	}
+UserModel.insertMany(arr)
+.then(docs=>{
+	console.log(docs)
+})
+.catch(err=>{
+	console.log('insertMany err:',err)
+})
 
 
 
