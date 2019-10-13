@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-13 12:01:01
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-13 15:04:47
+* @Last Modified time: 2019-10-13 15:12:44
 */
 const mongoose = require('mongoose')
 
@@ -29,21 +29,9 @@ db.once('open',()=>{
 	const UserModel = mongoose.model('User',UserSchema);
 
 	//3.使用模型(CRUD)
-	
-	//3.4 删除
-	/*
-	UserModel.deleteOne({age:{$gt:140}},(err,result)=>{
+	UserModel.distinct("name",{age:{$gt:130}},(err,result)=>{
 		if(err){
-			console.log('dateOne user error:',err)
-		}else{
-			console.log(result)
-		}
-	})
-*/
-
-	UserModel.deleteMany({age:{$gt:140}},(err,result)=>{
-		if(err){
-			console.log('dateOne user error:',err)
+			console.log('distinct user error:',err)
 		}else{
 			console.log(result)
 		}
