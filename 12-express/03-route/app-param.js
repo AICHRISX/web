@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-14 16:59:52
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-14 18:39:02
+* @Last Modified time: 2019-10-14 21:18:21
 */
 const express = require('express')
 const app = express()
@@ -22,8 +22,5 @@ app.get('/',(req,res)=>{
 
 })
 
-app.post('/', (req, res) => res.send('post response data!'))
-app.put('/', (req, res) => res.send('put response data!'))
-app.delete('/', (req, res) => res.send('delete response data!'))
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
