@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-13 15:34:16
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-13 21:56:44
+* @Last Modified time: 2019-10-14 14:10:09
 */
 /*
 * @Author: Chris
@@ -44,23 +44,56 @@ db.once('open',()=>{
 		console.log('insert users err:',err.message)
 	})
 */
-
+/*
 BlogModel.insertMany([{
 	title:"blog1",
 	content:"blog1 content",
 	author:"5da2c042c7d1e814add3b134"
 },{
-	
+	title:"blog2",
+	content:"blog2 content",
+	author:"5da2c042c7d1e814add3b134"
 }])
+
 .then(docs=>{
 	console.log('insert blogs:',docs)
 })
 .catch(err=>{
 	console.log('insert blogs err:',err.message)
 })
+*/
 
-
-
+//根据姓名找到第一个用户的所有文章
+/*
+UserModel.findOne({name:"Chris"},(err,user)=>{
+	if(err){
+		console.log('find user err:',err)
+	}else{
+		// console.log(user)
+		BlogModel.find({author:user._id},(err,blogs)=>{
+			if(err){
+				console.log('find blogs err:',err)
+			}else{
+				console.log(blogs)
+			}
+		})
+	}
+})
+*/
+UserModel.findOne({name:"Chris"},(err,user)=>{
+	if(err){
+		console.log('find user err:',err)
+	}else{
+		console.log(user)
+		user.findBlogs((err,blogs)=>{
+			if(err){
+				console.log('find blogs err:',err)
+			}else{
+				console.log(blogs)
+			}
+		})
+	}
+})
 
 
 
