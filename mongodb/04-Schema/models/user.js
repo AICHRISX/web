@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-13 15:27:52
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-14 15:05:26
+* @Last Modified time: 2019-10-14 15:24:39
 */
 /*
 * @Author: Chris
@@ -51,14 +51,18 @@ const UserSchema = new mongoose.Schema({
 	}
 })
 
-
+//注意：因为需要用到调用时的对象，所以不能用箭头函数
 UserSchema.methods.findBlogs = function(cb){
 	// console.log(this._id)
 	// console.log(this.model('blog'))
 	this.model('blog').find({author:this._id},cb)
 }
-
-
+//注意：因为需要用到调用时的对象，所以不能用箭头函数
+UserSchema.statics.findByPhone = function(val,cb){
+	// console.log(this)// UserModel
+	// console.log(this.model('user') == this)//true
+	this.findOne({phone:val},cb)
+}
 //2.根据Schema定义数据模型
 //2.1 model方法第一个参数指定集合名称，mongoose会默认转换为复数
 //2.2 model方法第二个参数指定Schema
