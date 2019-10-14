@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-13 15:27:52
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-14 15:24:39
+* @Last Modified time: 2019-10-14 16:18:05
 */
 /*
 * @Author: Chris
@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema({
 		type:String,
 		required:[true,"姓名必须输入"],
 		minlength:[3,"用户名最小长度为3个字符"],
-		maxlength:[3,"用户名最大长度为8个字符"]
+		maxlength:[8,"用户名最大长度为8个字符"]
 	},
 	age:{
 		type:Number,
@@ -66,7 +66,7 @@ UserSchema.statics.findByPhone = function(val,cb){
 //2.根据Schema定义数据模型
 //2.1 model方法第一个参数指定集合名称，mongoose会默认转换为复数
 //2.2 model方法第二个参数指定Schema
-const UserModel = mongoose.model('User',UserSchema);
+const UserModel = mongoose.model('User',UserSchema)
 
 
 module.exports = UserModel
