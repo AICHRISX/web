@@ -1,9 +1,4 @@
-/*
-* @Author: getgitch95
-* @Date:   2019-08-09 10:29:44
-* @Last Modified by:   getgitch95
-* @Last Modified time: 2019-08-09 11:20:53
-*/
+
 const path = require('path')
 module.exports = {
 	//指定环境
