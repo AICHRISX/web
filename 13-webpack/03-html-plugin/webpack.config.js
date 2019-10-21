@@ -2,12 +2,12 @@
 * @Author: Chris
 * @Date:   2019-10-20 21:00:11
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-20 22:49:16
+* @Last Modified time: 2019-10-21 11:36:16
 */
 const path = require('path')
 
 const htmlWebpackPlugin = require('html-webpack-plugin')
-
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 module.exports = {
 	//指定环境
 	mode:'development',
@@ -53,6 +53,7 @@ module.exports = {
 		]
 	},
 	plugins:[
+		new CleanWebpackPlugin(),
 		new htmlWebpackPlugin({
 			template:'./src/view/index.html',//模版文件
 			filename:'index.html',//输出的文件名
@@ -60,7 +61,11 @@ module.exports = {
 			hash:true,//给生成的js/css文件添加一个唯一的hash
 			chunks:['common','index']
 		})
-	]
+	],
+	devServer: {
+		contentBase: './dist',//内容的目录	
+		port:8090,//指定服务端口
+	},
 }
 
 
