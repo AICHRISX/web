@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-20 21:00:11
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-22 22:37:32
+* @Last Modified time: 2019-10-23 08:54:17
 */
 const path = require('path')
 
@@ -49,7 +49,7 @@ module.exports = {
 					}
 				]
 			},
-		babel
+		//babel
 			{
 				test:/\.js$/,
 				exclude:/(node_modules)/,
