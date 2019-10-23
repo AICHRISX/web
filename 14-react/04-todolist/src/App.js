@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-23 09:40:06
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-23 11:24:01
+* @Last Modified time: 2019-10-23 21:29:55
 */
 import React,{ Component } from 'react'
 import "./App.css"
@@ -36,9 +36,15 @@ class App extends Component{
 		this.state.task = ev.target.value
 		console.log(this.state)
 		*/
+		/*
 		this.setState({
 			task:ev.target.value
 		})
+		*/
+		const task = ev.target.value
+		this.setState(()=>({
+			task:task
+		}))
 	}
 	render(){
 		return(
