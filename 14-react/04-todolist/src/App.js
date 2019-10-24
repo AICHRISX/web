@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-23 09:40:06
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-24 15:27:28
+* @Last Modified time: 2019-10-24 21:59:59
 */
 import React,{ Component } from 'react'
 import Item from './Item.js'
@@ -11,7 +11,7 @@ class App extends Component{
 	constructor(props){
 		super(props)
 		this.state = {
-			list:["吃饭","睡觉","敲代码","跑步"],
+			list:["吃饭"],
 			task:''
 		}
 		this.handleChange = this.handleChange.bind(this)
@@ -21,10 +21,15 @@ class App extends Component{
 		this.setState((preState)=>({
 			list:[...preState.list,preState.task],
 			task:''
-		}))
+		}),()=>{
+			console.log('2::',this.ul.childNodes)
+		})
+		console.log('1::',this.ul.childNodes)
 	}
 	handleChange(ev){
-		const task = ev.target.value
+		// console.log(this.input)
+		// const task = ev.target.value
+		const task = this.input.value
 		this.setState(()=>({
 			task:task
 		}))
@@ -44,9 +49,9 @@ class App extends Component{
 	render(){
 		return(
 		<div className="App">		
-			<input onChange={this.handleChange} value={this.state.task} />
+			<input onChange={this.handleChange} value={this.state.task} ref={(input)=>{this.input = input}} />
 			<button onClick={this.handleAdd}>提交</button>
-			<ul>
+			<ul ref={(ur)=>{this.ul = ul}}>
 				{
 					this.getItems()
 				}
