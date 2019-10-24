@@ -2,11 +2,11 @@
 * @Author: Chris
 * @Date:   2019-10-23 09:40:06
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-23 22:15:18
+* @Last Modified time: 2019-10-24 14:41:07
 */
 import React,{ Component } from 'react'
+import Item from './Item.js'
 import "./App.css"
-
 class App extends Component{
 	constructor(props){
 		super(props)
@@ -63,6 +63,7 @@ class App extends Component{
 				{
 					
 					this.state.list.map((item,index)=>{
+						/*
 						return(
 							<li 
 								key={index}
@@ -71,8 +72,9 @@ class App extends Component{
 								{item}
 							</li>
 							)
+							*/
+							return <Item key={index} task={item} onClick={this.handleDel.bind(this,index)} />
 					})
-					
 					// [<li>111</li>,<li>222</li>]
 				}
 			</ul>
