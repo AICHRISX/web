@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-23 09:40:06
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-24 14:41:07
+* @Last Modified time: 2019-10-24 14:55:08
 */
 import React,{ Component } from 'react'
 import Item from './Item.js'
@@ -73,7 +73,11 @@ class App extends Component{
 							</li>
 							)
 							*/
-							return <Item key={index} task={item} onClick={this.handleDel.bind(this,index)} />
+							/*
+							return <Item key={index} task={item} list={this.state.list} />
+							*/
+							return <Item key={index} task={item} handleDel={this.handleDel.bind(this,index)} />
+
 					})
 					// [<li>111</li>,<li>222</li>]
 				}
