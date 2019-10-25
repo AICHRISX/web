@@ -2,19 +2,20 @@
 * @Author: Chris
 * @Date:   2019-10-23 09:40:06
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-25 18:12:29
+* @Last Modified time: 2019-10-25 18:46:10
 */
 import React,{ Component } from 'react'
-import { DatePicker } from 'antd';
+import { Button,Input,Row,Col,List } from 'antd';
 import Item from './Item.js'
+
 import "./App.css"
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
 
 class App extends Component{
     constructor(props){
         super(props)
         this.state = {
-            list:["吃饭"],
+            list:["吃饭","睡觉"],
             task:''
         }
         this.handleChange = this.handleChange.bind(this)
@@ -27,7 +28,7 @@ class App extends Component{
         }))
     }
     handleChange(ev){
-      const task = this.input.value
+      const task = ev.target.value
       this.setState(()=>({
          task:task
       }))
@@ -47,21 +48,34 @@ class App extends Component{
     render(){
         return( 
         <div className="App">
-            <input 
-                onChange={this.handleChange} 
-                value={this.state.task}
-                ref={(input)=>{this.input = input}} 
+            <Row>
+                <Col span={18}>
+                    <Input 
+                        onChange={this.handleChange}
+                        value={this.state.task}
+                    />
+                </Col>
+                <Col span={6}> 
+                    <Button 
+                        type="primary"
+                        onClick={this.handleAdd}
+                    >
+                        Primary
+                    </Button>
+                </Col>
+            </Row>
+            <List
+                style={{marginTop:10}}
+                bordered
+                dataSource={this.state.list}
+                renderItem={(item,index) => (
+                    <List.Item
+                        onClick={this.handleDel.bind(this,index)}
+                    >
+                        {item}
+                    </List.Item>
+                )}
             />
-            <button onClick={this.handleAdd}>提交</button>
-            <ul ref={(ul)=>{this.ul = ul}}>
-                {
-                    this.getItems()
-                }
-            </ul>
-            <DatePicker />
-            <div>
-            <button type="primary">Primary</button>
-            </div>
         </div> 
         )             
     }
