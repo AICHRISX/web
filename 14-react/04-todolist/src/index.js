@@ -2,15 +2,16 @@
 * @Author: Chris
 * @Date:   2019-10-22 21:25:21
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-24 22:15:17
+* @Last Modified time: 2019-10-25 14:55:52
 */
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App.js'
 
-// ReactDOM.render(<App />,document.getElementById('root'))
+ReactDOM.render(<App />,document.getElementById('root'))
 
 //虚拟DOM测试
+/*
 function tick(){
 	const elem = (
 		<div>
@@ -22,3 +23,4 @@ function tick(){
 }
 tick()
 setInterval(tick,1000)
+*/
