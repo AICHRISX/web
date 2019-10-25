@@ -2,12 +2,13 @@
 * @Author: Chris
 * @Date:   2019-10-23 09:40:06
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-25 15:19:01
+* @Last Modified time: 2019-10-25 18:12:29
 */
 import React,{ Component } from 'react'
+import { DatePicker } from 'antd';
 import Item from './Item.js'
-
 import "./App.css"
+import 'antd/dist/antd.css';
 
 class App extends Component{
     constructor(props){
@@ -57,6 +58,10 @@ class App extends Component{
                     this.getItems()
                 }
             </ul>
+            <DatePicker />
+            <div>
+            <button type="primary">Primary</button>
+            </div>
         </div> 
         )             
     }
