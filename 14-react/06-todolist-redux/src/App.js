@@ -2,87 +2,121 @@
 * @Author: Chris
 * @Date:   2019-10-23 09:40:06
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-25 19:16:21
+* @Last Modified time: 2019-10-25 20:37:46
 */
-import React,{ Component } from 'react'
+import React, { Component } from 'react'
+import axios from 'axios'
 
 import store from './store'
+/*
+import {
+    ADD_ITEM,
+    CHANGE_ITEM,
+    DEL_ITEM
+} from './store/actionTypes.js'
+*/
 
-import { Button,Input,Row,Col,List } from 'antd';
+import {
+    getChangeItemAction,
+    getAddItemAction,
+    getDelItemAction,
+    getLoadInitDataAction
+} from './store/actionCreator.js'
 
 
-import "./App.css"
+import AppUI from './AppUI.js'
 
-class App extends Component{
-    constructor(props){
+//容器组件
+class App extends Component {
+    constructor(props) {
         super(props)
+        /*
         this.state = {
             list:["吃饭","睡觉"],
             task:''
         }
+        */
         this.handleChange = this.handleChange.bind(this)
-        this.handleAdd=this.handleAdd.bind(this)
+        this.handleAdd = this.handleAdd.bind(this)
+        this.handleDel = this.handleDel.bind(this)
 
-
-        console.log(store)
+        this.state = store.getState()
+        store.subscribe(() => { this.setState(store.getState()) })
     }
-    handleAdd(){
-        this.setState((preState)=>({
-            list:[...preState.list,preState.task],
-            task:''
+    componentDidMount(){
+        //发送ajax请求
+      
+        axios.get('http://127.0.0.1:3000')
+        .then(result=>{
+            // console.log(result)
+            store.dispatch(getLoadInitDataAction(result.data))
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    
+       //store.dispatch(getLoadInitDataAction())
+    }
+    handleAdd() {
+        /*
+        this.setState((preState) => ({
+            list: [...preState.list, preState.task],
+            task: ''
         }))
+        */
+       /*
+        const action = {
+            type:ADD_ITEM
+        }
+        store.dispatch(action)
+        */
+        store.dispatch(getAddItemAction())
     }
-    handleChange(ev){
-      const task = ev.target.value
-      this.setState(()=>({
-         task:task
-      }))
-    }
-    handleDel(index){
-        const list = [...this.state.list]
-        list.splice(index,1)
+    handleChange(ev) {
+        const task = ev.target.value
+        /*
         this.setState(()=>({
+           task:task
+        }))
+        */
+        //派发action
+        //action就是一个对象
+        /*
+        const action = {
+            type: CHANGE_ITEM,
+            payload: task
+        }
+        store.dispatch(action)
+        */
+       store.dispatch(getChangeItemAction(task))
+    }
+    handleDel(index) {
+        /*
+        const list = [...this.state.list]
+        list.splice(index, 1)
+        this.setState(() => ({
             list
         }))
+        */
+       /*
+       const action = {
+            type: DEL_ITEM,
+            payload: index        
+       }
+       store.dispatch(action)
+       */
+       store.dispatch(getDelItemAction(index))
     }
-    getItems(){
-        return this.state.list.map((item,index)=>{
-          return <Item key={index} task={item} handleDel={this.handleDel.bind(this,index)} />
-        })        
-    }
-    render(){
-        return( 
-        <div className="App">
-            <Row>
-                <Col span={18}>
-                    <Input 
-                        onChange={this.handleChange}
-                        value={this.state.task}
-                    />
-                </Col>
-                <Col span={6}> 
-                    <Button 
-                        type="primary"
-                        onClick={this.handleAdd}
-                    >
-                        Primary
-                    </Button>
-                </Col>
-            </Row>
-            <List
-                style={{marginTop:10}}
-                bordered
-                dataSource={this.state.list}
-                renderItem={(item,index) => (
-                    <List.Item
-                        onClick={this.handleDel.bind(this,index)}
-                    >
-                        {item}
-                    </List.Item>
-                )}
+    render() {
+        return (
+            <AppUI 
+                task={this.state.task}
+                list={this.state.list}
+                handleChange={this.handleChange}
+                handleDel={this.handleDel}
+                handleAdd={this.handleAdd}
             />
-        </div> 
-        )             
+        )
     }
 }
 
