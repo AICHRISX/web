@@ -2,13 +2,16 @@
 * @Author: Chris
 * @Date:   2019-10-23 09:40:06
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-26 11:33:18
+* @Last Modified time: 2019-10-26 12:52:02
 */
 import React, { Component } from 'react'
 
 import { Button, Input, Row, Col, List } from 'antd';
 
 import "./App.css"
+
+//UI组件
+
 const AppUI = (props)=>{
     const { handleChange,task,handleAdd,handleDel,list } = props
     return (

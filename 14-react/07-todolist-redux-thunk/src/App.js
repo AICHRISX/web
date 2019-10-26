@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-23 09:40:06
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-26 11:41:23
+* @Last Modified time: 2019-10-26 12:51:40
 */
 import React, { Component } from 'react'
 import store from './store'
@@ -10,7 +10,6 @@ import {
     getChangeItemAction,
     getAddItemAction,
     getDelItemAction,
-    getLoadInitDataAction
     getRequestInitDataAction
 } from './store/actionCreator.js'
 
