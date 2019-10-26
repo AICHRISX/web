@@ -2,14 +2,14 @@
 * @Author: Chris
 * @Date:   2019-10-22 21:25:21
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-25 14:55:52
+* @Last Modified time: 2019-10-26 10:57:53
 */
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import App from './App.js'
 
 ReactDOM.render(<App />,document.getElementById('root'))
-
 //虚拟DOM测试
 /*
 function tick(){
