@@ -1,0 +1,46 @@
+
+
+
+
+
+import axios from 'axios'
+import {
+    ADD_ITEM,
+    CHANGE_ITEM,
+    DEL_ITEM,
+    LOAD_DATA
+} from './actionTypes.js'
+export const getChangeItemAction = (task)=>({
+    type: CHANGE_ITEM,
+    payload: task    
+})
+
+export const getAddItemAction = ()=>({
+    type:ADD_ITEM
+})
+
+export const getDelItemAction = (index)=>({
+    type: DEL_ITEM,
+    payload: index   
+})
+
+
+export const getLoadInitDataAction = (payload)=>({
+    type:LOAD_DATA,
+    payload
+})
+
+export const getRequestInitDataAction = ()=>{
+    return (dispatch,getState)=>{
+        axios.get('http://127.0.0.1:3000')
+        .then(result=>{
+            dispatch(getRequestInitDataAction(result.data))
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    }
+}
+
+
+
