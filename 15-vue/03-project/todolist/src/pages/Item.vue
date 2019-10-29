@@ -5,14 +5,17 @@
 		@mouseenter="handleShow(true)"
 		@mouseleave="handleShow(false)"
 	>
-		<input type="checkbox">
-		<span>吃饭</span>
+		<input type="checkbox" v-model="todo.done">
+		<span>{{todo.task}}</span>
 		<button v-if="isShow">删除</button>
 	</div>
 </template>
 <script>
 	export default {
 		name:'Item',
+		props:{
+			todo:Object
+		},
 		data(){
 			return {
 				bgColor:'#fff',

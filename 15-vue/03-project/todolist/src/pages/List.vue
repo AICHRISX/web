@@ -1,8 +1,9 @@
 <template>
 	<div class="List">
-		List
-		<Item />
-		<Item />
+		<Item
+			v-for="(todo,index) in todos"
+			:todo="todo"
+		/>
 	</div>
 </template>
 <script>
@@ -11,6 +12,9 @@
 		name:'List',
 		components:{
 			Item
+		},
+		props:{
+			todos:Array
 		}
 	}
 </script>

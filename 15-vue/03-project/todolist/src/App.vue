@@ -2,8 +2,8 @@
 <template>
 	<div id="App">
 		<!-- 3.使用组件 -->
-		<Header />
-		<List />
+		<Header :addTodo="addTodo" />
+		<List :todos="todos" />
 		<Footer />
 	</div>
 </template>
@@ -22,6 +22,25 @@
 			Header,
 			List,
 			Footer,
+		},
+		data(){
+			return {
+				todos:[
+					{
+						task:'吃饭',
+						done:true
+					},
+					{
+						task:'睡觉',
+						done:false
+					},
+				]
+			}
+		},
+		methods:{
+			addTodo(todo){
+				this.todos.unshift(todo)
+			}
 		}
 	}
 </script>
