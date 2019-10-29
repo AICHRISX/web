@@ -1,14 +1,15 @@
 <template>
-	<div class="Message">
-		<p>hello</p>
-	</div>
+    <div class="Logo">
+        <img alt="Vue logo" src="../assets/images/logo.png">
+    </div>
 </template>
 
-
 <script>
-	export default {
-		name:'Message'
-	}
+    export default {
+        name:'Logo'
+    }
 </script>
 
-<style></style>
+<style>
+  
+</style>
