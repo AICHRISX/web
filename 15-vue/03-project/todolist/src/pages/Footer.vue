@@ -1,7 +1,7 @@
 <template>
 	<div class="Footer">
 		<input type="checkbox">
-		<span>2/3</span>
+		<span>{{totalDone}}/{{total}}</span>
 		<button>删除选中</button>
 	</div>
 </template>
@@ -9,7 +9,23 @@
 
 <script>
 	export default {
-		name:'Footer'
+		name:'Footer',
+		props:{
+			todos:Array,
+		},
+		computed:{
+			total(){
+				return this.todos.length
+			},
+			totalDone(){
+				return this.todos.reduce((total,item)=>{
+					if(item.done){
+						total = total + 1
+					}
+					return total
+				},0)
+			}
+		}
 	}
 </script>
 
