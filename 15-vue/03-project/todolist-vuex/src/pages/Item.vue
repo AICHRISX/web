@@ -11,6 +11,7 @@
 	</div>
 </template>
 <script>
+	import { DEL_TODO } from '../store/types.js'
 	export default {
 		name:'Item',
 		props:{
@@ -32,7 +33,8 @@
 			handleDel(){
 				if(window.confirm('您确定要删除'+this.todo.task+'吗?')){
 					// console.log(this.index)
-					this.delTodo(this.index)
+					// this.delTodo(this.index)
+					this.$store.dispatch(DEL_TODO,this.index)
 				}
 			}
 		}
@@ -40,13 +42,12 @@
 </script>
 <style scoped>
 	.Item{
-		width: 800px;
+		width: 100%;
 		line-height: 40px;
 		border: 1px dashed #ccc;
 		margin-top: 10px;
 	}
 	input{
-		width: 800px;
 		float: left;
 		margin-top: 14px;
 		vertical-align: top;
