@@ -2,7 +2,7 @@
 * @Author: Chris
 * @Date:   2019-10-30 10:53:50
 * @Last Modified by:   Chris
-* @Last Modified time: 2019-10-30 12:00:09
+* @Last Modified time: 2019-10-30 12:06:18
 */
 //store的计算属性
 export default {
@@ -16,5 +16,8 @@ export default {
 			}
 			return total
 		},0)
+	},
+	allDone(state,getter){
+		return (getter.total == getter.totalDone) && (getter.total != 0)
 	}
 }
