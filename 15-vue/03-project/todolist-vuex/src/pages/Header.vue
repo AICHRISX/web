@@ -12,6 +12,7 @@
 
 
 <script>
+	import { ADD_TODO } from '../store/types.js'
 	export default {
 		name:'Header',
 		props:{
