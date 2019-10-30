@@ -1,6 +1,6 @@
 <template>
 	<div class="Footer">
-		<input type="checkbox">
+		<input type="checkbox" v-model="allDone">
 		<span>{{totalDone}}/{{total}}</span>
 		<button>删除选中</button>
 	</div>
@@ -12,6 +12,7 @@
 		name:'Footer',
 		props:{
 			todos:Array,
+			selectAllTodo:Function,
 		},
 		computed:{
 			total(){
@@ -24,6 +25,14 @@
 					}
 					return total
 				},0)
+			},
+			allDone:{
+				get(){
+					return (this.total == this.totalDone) && (this.total != 0)
+				},
+				set(value){
+					this.selectAllTodo(value)
+				}
 			}
 		}
 	}
