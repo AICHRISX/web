@@ -16,6 +16,7 @@ import "./Module.js"
 // import a from './Module.js'
 // import { a1 as a,b1 as b } from './Module.js'
 import a, {b} from './Module.js'
+
 console.log('here is index.js...')
 /*
 console.log('a=',a)
