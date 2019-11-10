@@ -9,7 +9,6 @@ const app = express()
 
 
 app.use(express.static('public'))
-
 app.use((req,res,next)=>{
 	console.log('do something for task A')
 	// res.send('task A done')
