@@ -10,7 +10,6 @@ const app = express()
 const usersRouter = require('./routes/users.js')
 const blogsRouter = require('./routes/blogs.js')
 */
-
 app.use(express.static('public'))
 app.use("/users",require('./routes/users.js'))
 app.use("/blogs",require('./routes/blogs.js'))
