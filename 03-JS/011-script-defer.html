@@ -1,21 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>011-script-defer.html</title>
 	<style>
-		div{
+		#box{
 			width: 100px;
 			height: 100px;
+			margin: 100px auto;
 			border: 1px solid #000;
 		}
 	</style>
-	<script defer src="JS/011-1.js"></script>
-	<script defer>
-		console.log(222);
-	</script>
+	<script defer src="js/011.js"></script>
+	<script defer src="js/011-1.js"></script>
 </head>
 <body>
-	<div></div>
+	<div id="box"></div>
 </body>
 </html>
