@@ -2,45 +2,39 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>06-js的内部写法.html</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>006-js的内部写法</title>
 	<style>
-		div{
-			width: 100px;
-			height: 100px;
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
 			margin: 100px auto;
-			background: blue;
+			background-color: red;
 		}
 	</style>
-	<script type="text/javascript">
-		function toChange(){
-			
-			// this.style.width='200px';
-			// this.style.height='200px';
-			// this.style.background='blue';
-			
-			var oBox = document.getElementById('box')；
-			oBox.style.width='200px';
-			oBox.style.height='200px';
-			oBox.style.background='red';
-
+	<script>
+		/* 函数 */
+		function toBig(){
+			var oDiv = document.getElementById('box');
+			oDiv.style.width='400px';
+			oDiv.style.height='400px';
+			oDiv.style.backgroundColor='skyblue';
 		}
-		toChange();
-		function toNormal(){
-			var oBox = document.getElementById('box');
-			oBox.style.width='100px';
-			oBox.style.height='100px';
-			oBox.style.background='blue';
-
+		function toSmall(){
+			var oDiv = document.getElementById('box');
+			oDiv.style.width='200px';
+			oDiv.style.height='200px';
+			oDiv.style.backgroundColor='blue';
 		}
 	</script>
 </head>
 <body>
-	<div id="box" onmouseover="toChange()"
-				  onmouseover="toNormal()"> </div>
-
-	<div onmouseover="this.style.width='200px';this.style.height='200px';this.style.background='red'" 
-		 onmouseout="this.style.width='100px';this.style.height='100px';this.style.background='skyblue'"></div>
-
-
+	<div id="box" class="box" onmouseover="toBig()" onmouseout="toSmall()"></div>
 </body>
 </html>
