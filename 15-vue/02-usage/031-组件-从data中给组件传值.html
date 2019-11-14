@@ -6,8 +6,12 @@
 </head>
 <body>
 	<div id="app">
-		<todo-item v-for="(item,index) in items" :task="item.task" :index="index" :key="index">
-			
+		<todo-item 
+		v-for="(item,index) in items" 
+		:task="item.task" 
+		:index="index" 
+		:key="index">
+		
 		</todo-item>
 	</div>
 	<template id="todo-item">
