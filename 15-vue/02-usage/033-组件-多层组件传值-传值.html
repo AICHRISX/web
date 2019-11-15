@@ -7,12 +7,14 @@
 <body>
 	<div id="app">
 		<todo-item 
-		v-for="(item,index) in items" 
-		:key="index" 
-		:task="item.task" 
-		:dateline="item.dateline">
+			v-for="(item,index) in items" 
+			:key="index" 
+			:task="item.task" 
+			:dateline="item.dateline"
+		>
 		</todo-item>
 	</div>
+	<!--模版需要挂载在组件外边-->
 	<template id="todo-item">
 		<div>
 			<task :task="task"></task>
@@ -36,7 +38,7 @@
 			}
 		},
 		props:{
-			dateline:String
+			task:String
 		}
 	})
 	var Dateline = Vue.extend({
@@ -54,7 +56,6 @@
 		template:'#todo-item',
 		data(){
 			return {
-
 			}
 		},
 		components:{
@@ -73,14 +74,14 @@
 		el:'#app',
 		data: {
 			items:[
-			{
-				task:'吃饭',
-				dateline:'今天中午'
-			},
-			{
-				task:'学习vue',
-				dateline:'超快乐'
-			}
+				{
+					task:'吃饭',
+					dateline:'今天中午'
+				},
+				{
+					task:'学习vue',
+					dateline:'今天'
+				}
 			]
 		}
 	})
