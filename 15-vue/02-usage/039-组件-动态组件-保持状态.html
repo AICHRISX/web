@@ -27,7 +27,10 @@
 </head>
 <body>
 	<div id="app">
-		<button v-for="tab in tabs" @click="currentTab = tab">
+		<button 
+		v-for="tab in tabs" 
+		@click="currentTab = tab"
+		>
 			{{tab}}
 		</button>
 		<keep-alive>
