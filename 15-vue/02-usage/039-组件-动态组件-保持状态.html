@@ -40,7 +40,10 @@
 	<template id="tab-articles">
 		<div class="articles-wrap">
 			<ul>
-				<li v-for="articles in articles" @click="selectedArticle = articles"     :class="{active:selectedArticle == articles}">
+				<li v-for="articles in articles" 
+				@click="selectedArticle = articles"     
+				:class="{active:selectedArticle == articles}"
+				>
 					{{articles.title}}
 				</li>
 			</ul>
