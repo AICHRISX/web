@@ -19,10 +19,10 @@
 		<div>home page</div>
 	</template>
 	<template id="acticles">
-		<div>home page</div>
+		<div>acticles page</div>
 	</template>
 	<template id="about">
-		<div>home page</div>
+		<div>about page</div>
 	</template>
 </body>
 <script src="js/vue.js"></script>
@@ -49,6 +49,7 @@
 	var router = new VueRouter({
 		routes:routes
 	})
+	//4.创建和挂载根实例
 	var vm = new Vue({
 		el: '#app',
 		router:router,
