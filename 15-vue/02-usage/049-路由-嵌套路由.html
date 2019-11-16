@@ -1,73 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>049-路由-嵌套路由.html</title>
 </head>
+
 <body>
 	<div id="app">
 		<nav>
-			<router-link to="/home">Home</router-link>
-			<router-link to="/acticles">Acticles</router-link>
-			<router-link to="about">About</router-link>
+			<router-link to="/home">home</router-link>
+			<router-link to="/articles">articles</router-link>
+			<router-link to="/about">about</router-link>
 		</nav>
 		<div>
+			<!-- 路由出口 -->
+			<!-- 路由匹配到的组件将渲染在这里 -->
 			<router-view></router-view>
 		</div>
 	</div>
 	<template id="home">
-		<div>home page</div>
-	</template>
-	<template id="acticles">
 		<div>
-			<router-link to="/articles/tech">tech</router-link>
-			<router-link to="/articles/sport">sport</router-link>
-		home page
+			home page
 		</div>
-		<router-view></router-view>
+	</template>
+	<template id="articles">
+		<div>
+			<div>
+				<router-link to="/articles/tech">tech</router-link>
+				<router-link to="/articles/sport">sport</router-link>
+			</div>
+			<router-view></router-view>
+		</div>
+	</template>
+	<template id="tech">
+		<div>
+			tech page
+		</div>
+	</template>
+	<template id="sport">
+		<div>
+			sport page
+		</div>
 	</template>
 	<template id="about">
-		<div>home page</div>
+		<div>
+			about page
+		</div>
 	</template>
 </body>
 <script src="js/vue.js"></script>
 <script src="js/vue-router.js"></script>
 <script>
-	//1.定义路由组件
+	//1. 定义 (路由) 组件。
 	var Home = Vue.extend({
-		template:'#home'
+		template: '#home'
 	})
-	var Acticles = Vue.extend({
-		template:'#acticles'
+	var Articles = Vue.extend({
+		template: '#articles'
 	})
 	var Tech = Vue.extend({
-		template:'#tech'
+		template: '#tech'
 	})
-	var sport = Vue.extend({
-		template:'#sport'
+	var Sport = Vue.extend({
+		template: '#sport'
 	})
 	var About = Vue.extend({
-		template:'#about'
+		template: '#about'
+	})
+	// 2. 定义路由
+	var routes = [{
+			path: '/home',
+			component: Home
+		},
+		{
+			path: '/articles',
+			component: Articles,
+			children: [{
+					path: 'tech',
+					component: Tech
+				},
+				{
+					path: 'sport',
+					component: Sport
+				},
+				{
+					path: '/',
+					redirect: 'tech'
+				}
+			]
+		},
+		{
+			path: '/about',
+			component: About
+		},
+		{
+			path: '/',
+			redirect: '/home'
+		},
+	]
+	// 3. 创建 router 实例，然后传 `routes` 配置
+	var router = new VueRouter({
+		routes: routes // (缩写) 相当于 routes: routes
 	})
 
-	//2.定义路由
-	var routes = [
-		{ path:'/home',component:Home},
-		{ path:'/acticles',component:Acticles,children:[
-		{ path:'tech',component:Tech},
-		{ path:'sport',component:Sport}
-		{ path:'/',redirect:'tech'}],
-		{ path:'/about',component:About},
-		{ path:'/',redirect:'/home'},]
-	//3.创建router实例，然后传router配置
-	var router = new VueRouter({
-		routes:routes
-	})
+	// 4. 创建和挂载根实例。
 	var vm = new Vue({
 		el: '#app',
-		router:router,
-		data:{
-		},
+		router: router,
+		data: {},
 	})
 </script>
+
 </html>
