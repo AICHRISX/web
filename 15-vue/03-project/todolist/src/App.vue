@@ -64,6 +64,5 @@
 	#app{
 		width: 600px;
 		margin: 100px auto;
-		
 	}
 </style>
