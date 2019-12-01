@@ -6,7 +6,7 @@
 **这是加粗的文字**
 ***这是斜体加粗的文字***
 ~~这是加删除线的文字~~
-[点击跳转到百度](www.baidu.com)
+[点击跳转到百度](https://www.baidu.com)
 ![图片]<https://www.google.co.uk/https://amadeus.com/images/en/nature/landscape/man-in-stars.jpg>
 ```
 ├── 01-html     
